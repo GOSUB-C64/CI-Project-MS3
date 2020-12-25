@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Of Breads</title>
-</head>
-<body>
+
+{% extends "base.html" %}
+{% block content %}
+<h1>base template extension</h1>
     {% for bread in breads %}
         {{ bread.name }}<br>
         {{ bread.description }}<br>
@@ -16,5 +12,4 @@
         {{ bread.cooking_temp }}<br>
         {{ bread.is_featured }}<br>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
