@@ -17,10 +17,10 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_bread")
-def get_bread():
+@app.route("/get_breads")
+def get_breads():
     breads = mongo.db.breads.find()
-    return render_template("bread.html", breads=breads)
+    return render_template("breads.html", breads=breads)
 
 
 if __name__ == "__main__":
