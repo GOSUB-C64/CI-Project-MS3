@@ -39,14 +39,7 @@
             <li><a href="#">Add Recipe</a></li>
         </ul>
     </header>
-    <section>
-        <div class="row">
-            <div class="col s12">
-                <img src="./images/WB2.png" alt="a selection of baked breads" width="200px" height="200px">
-            </div>
-        </div>
-    </section>
-
+    
     <section>
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
@@ -72,6 +65,14 @@
     {% block scripts %}
     {% endblock %}
 
+
+    <footer>
+        <div class="footer deep-purple">
+            <div class="footer-bottom deep-purple lighten-2 center-align text-shadow">
+                &copy Copyright Chris Curran
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
