@@ -13,18 +13,19 @@
     {% endfor %}
 
     <ul class="collapsible">
-        <li>
-            <div class="collapsible-header deep-purple lighten-1 white-text text-shadow"><i class="fas fa-caret-down"></i>Bread one</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-            <div class="collapsible-header deep-purple lighten-1 white-text text-shadow"><i class="fas fa-caret-down"></i></div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-            <div class="collapsible-header deep-purple lighten-1 white-text text-shadow"><i class="fas fa-caret-down"></i></div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
+        {% for bread in breads %}
+            <li>
+                <div class="collapsible-header deep-purple lighten-1 white-text text-shadow">
+                    <i class="fas fa-caret-down"></i>
+                    <strong>{{ bread.name }}</strong> : {{ bread.description }}
+                </div>
+                <div class="collapsible-body">
+                    <strong>{{ bread.ingredients }}</strong>
+                    <p>{{ bread.method }}</p>
+                </div>
+            </li>
+        {% endfor %}
+
     </ul>
 
 {% endblock %}
