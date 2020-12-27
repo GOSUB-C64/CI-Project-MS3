@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, flash, render_template,
+    Flask, flash, request, render_template,
     redirect, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -24,8 +24,22 @@ def get_breads():
     return render_template("breads.html", breads=breads)
 
 
-@app.route("/add_recipe")
+@app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    if request.method == "POST":
+        bread = {
+            "name": request.form.get("name"),
+            "description": request.form.get("description"),
+            "country": request.form.get("country"),
+            "ingredients": request.form.get("ingredients"),
+            "method": request.form.get("method"),
+            "cooking_temp": request.form.get("temperature"),
+            "cooking_time": request.form.get("time"),
+            "image_url": request.form.get("url")
+        }
+        mongo.db.breads.insert_one(bread)
+        flash("New Bread Recipe Received - Thankyou!")
+        return redirect(url_for('get_breads'))
     return render_template("add_recipe.html")
 
 

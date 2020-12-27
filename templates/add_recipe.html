@@ -10,9 +10,9 @@
                 </div>
             </div>
         </section>
-
+        <!-- add name of bread -->
         <div class="row card-panel grey lighten-5">
-            <form class="col s12" method="POST" action="">
+            <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">edit</i>
@@ -21,6 +21,7 @@
                         <label for="name">Name of Bread</label>
                     </div>
                 </div>
+                <!-- add a description of bread -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">description</i>
@@ -29,6 +30,7 @@
                         <label for="description">Description</label>
                     </div>
                 </div>
+                <!-- add country of origin -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">flag</i>
@@ -283,6 +285,7 @@
                         </select>
                     </div>
                 </div>
+                <!-- add the ingredients -->
                 <div class="row">
                     <div class="col s12">
                         <i class="fa fa-balance-scale prefix"></i>
@@ -292,6 +295,7 @@
                         <span>ingredient and amount on single lines --- example 500g plain flour</span>
                     </div>
                 </div>
+                <!-- add the instructions -->
                 <div class="row">
                     <div class="col s12">
                         <i class="fa fa-list prefix"></i>
@@ -301,6 +305,7 @@
                         <span>Please put each step on a new line</span>
                     </div>
                 </div>
+                <!-- add a temperature -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fa fa-thermometer-empty prefix"></i>
@@ -309,28 +314,39 @@
                         <label for="temperature">Temperature</label>
                     </div>
                 </div>
+                <!-- add a cooking time -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">alarm</i>
                         <input id="time" name="time" type="text" class="validate" 
                             minlength="2" maxlength="30" required>
-                        <label for="time">Time</label>
+                        <label for="time">Cooking time</label>
                     </div>
                 </div>
+                <!-- add url of bread image -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fa fa-globe prefix"></i>
                         <input id="url" name="url" type="text" class="validate" 
-                            minlength="2" maxlength="200" required>
+                            minlength="2" maxlength="200">
                         <label for="url">Image Location(url)</label>
                     </div>
                 </div>
+                <!-- add author -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fa fa-book prefix"></i>
                         <input id="author" name="author" type="text" class="validate" 
                             minlength="2" maxlength="30" required>
                         <label for="author">Author</label>
+                    </div>
+                </div>
+                <!-- submit -->
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <button type="submit" class="btn-large deep-purple lighten-1 text.shadow">
+                            Add Bread Recipe <i class="fas fa-plus-square right"></i>
+                        </button>
                     </div>
                 </div>
             </form>
