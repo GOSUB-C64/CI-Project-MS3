@@ -43,3 +43,13 @@
 #footer-social i:hover {
     color: blue;
 }
+
+.label_ingredients {
+    margin: 0px;
+}
+
+.prefix ~ label {
+    margin-left: 1rem;
+    font-size: 15px;
+    margin-bottom: 11.6px;
+}
