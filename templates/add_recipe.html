@@ -32,7 +32,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">flag</i>
-                        <select id="country" name="country">
+                        <select id="country" name="country" class="validate" required>
                             <option value="" disabled selected>Country of Origin?</option>
                             <option value="Afganistan">Afghanistan</option>
                             <option value="Albania">Albania</option>
@@ -284,12 +284,53 @@
                     </div>
                 </div>
                 <div class="row">
-                    <!-- <div class="input-field col s12"> -->
                     <div class="col s12">
-                        <i class="material-icons prefix">description</i>
+                        <i class="fa fa-balance-scale prefix"></i>
                         <label for="ingredients" class="label_ingredients">Ingredients</label>
                         <textarea id="ingredients" name="ingredients" rows="4" cols="200" minlength="5" class="form-control validate" 
-                                placeholder="ingredient and amounts on single lines --- example > 500g plain flour" required></textarea>
+                                placeholder="ingredient and amount on single lines --- example > 500g plain flour" required></textarea>
+                        <span>ingredient and amount on single lines --- example 500g plain flour</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <i class="fa fa-list prefix"></i>
+                        <label for="method" class="label_ingredients">Method</label>
+                        <textarea id="method" name="method" rows="4" cols="200" minlength="5" class="form-control validate" 
+                                placeholder="Please put each step on a new line" required></textarea>
+                        <span>Please put each step on a new line</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fa fa-thermometer-empty prefix"></i>
+                        <input id="temperature" name="temperature" type="text" class="validate" 
+                            minlength="2" maxlength="20" required>
+                        <label for="temperature">Temperature</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">alarm</i>
+                        <input id="time" name="time" type="text" class="validate" 
+                            minlength="2" maxlength="30" required>
+                        <label for="time">Time</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fa fa-globe prefix"></i>
+                        <input id="url" name="url" type="text" class="validate" 
+                            minlength="2" maxlength="200" required>
+                        <label for="url">Image Location(url)</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fa fa-book prefix"></i>
+                        <input id="author" name="author" type="text" class="validate" 
+                            minlength="2" maxlength="30" required>
+                        <label for="author">Author</label>
                     </div>
                 </div>
             </form>
