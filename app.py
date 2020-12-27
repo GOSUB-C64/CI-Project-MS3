@@ -20,8 +20,8 @@ mongo = PyMongo(app)
 @app.route("/get_breads")
 def get_breads():
     breads = list(mongo.db.breads.find())
-    flash("....All Breads....")
-    return render_template("breads.html", breads=breads)
+    flash("All Breads")
+    return render_template("display_breads.html", breads=breads)
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])

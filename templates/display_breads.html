@@ -16,11 +16,17 @@
             <li>
                 <div class="collapsible-header deep-purple lighten-1 white-text text-shadow">
                     <i class="fas fa-caret-down"></i>
-                    <strong>{{ bread.name }}</strong> : {{ bread.description }}
+                    <strong class="font_Redressed">{{ bread.name }}</strong>
+                    <div class="font_Raleway">{{ bread.description }}</div>
                 </div>
-                <div class="collapsible-body">
-                    <strong>{{ bread.ingredients }}</strong>
-                    <p>{{ bread.method }}</p>
+                <div class="row collapsible-body">
+                    <div class="col s6">
+                        <strong>{{ bread.ingredients }}</strong>
+                    </div>
+                    <div class="col s6">
+                        <p>{{ bread.method }}</p>
+                    </div>
+                    <!-- <img src="{{ bread.image_url }}" class="right" width="100px"> -->
                 </div>
             </li>
         {% endfor %}
