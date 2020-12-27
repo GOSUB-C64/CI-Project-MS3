@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
         crossorigin="anonymous" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
@@ -25,7 +26,7 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_breads') }}">Home</a></li>
                     <li><a href="#">All Recipes</a></li>
-                    <li><a href="#">Add Recipe</a></li>
+                    <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
                 </ul>
             </div>
         </nav>
@@ -36,7 +37,7 @@
             </li>
             <li><a href="{{ url_for('get_breads') }}">Home</a></li>
             <li><a href="#">All Recipes</a></li>
-            <li><a href="#">Add Recipe</a></li>
+            <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
         </ul>
     </header>
     
@@ -67,9 +68,19 @@
 
 
     <footer>
-        <div class="footer deep-purple">
-            <div class="footer-bottom deep-purple lighten-2 center-align text-shadow">
-                &copy Copyright Chris Curran
+        <div class="row footer deep-purple">
+            <div class="footer-bottom deep-purple lighten-2 center-align">
+                <div class="col m6" id="footer-copyright">
+                    <h6>&copy Copyright Chris Curran</h6>
+                </div>
+                <div class="col m6" id="footer-social">
+                    <h5>
+                        <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a>
+                        <a href="https://twitter.com/home?lang=en-gb"><i class="fab fa-twitter-square"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram-square"></i></a>
+                        <a href="https://www.pinterest.co.uk/"><i class="fab fa-pinterest-square"></i></a>
+                    </h5>
+                </div>
             </div>
         </div>
     </footer>
