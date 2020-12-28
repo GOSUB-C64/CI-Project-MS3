@@ -1,12 +1,11 @@
 
 {% extends "base.html" %}
-{% block content %}
-
+    {% block content %}
     <section>
         <div class="row">
-            <div class="col s12">
-                <img src="/static/images/WB3.png" alt="a selection of baked breads" width="100%" height="100px">
-
+            <div class="col s12 landing_image">
+                <img src="/static/images/mixed_breads.jpg" 
+                    alt="a selection of baked breads">
             </div>
         </div>
     </section>
@@ -16,8 +15,8 @@
             <li>
                 <div class="collapsible-header deep-purple lighten-1 white-text text-shadow">
                     <i class="fas fa-caret-down"></i>
-                    <strong class="font_Redressed">{{ bread.name }}</strong>
-                    <div class="font_Raleway">{{ bread.description }}</div>
+                    <div class="font_Redressed">{{ bread.name }}</div>
+                    <div class="font_Raleway right-align">{{ bread.description }}</div>
                 </div>
                 <div class="row collapsible-body">
                     <div class="col s6">

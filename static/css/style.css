@@ -7,6 +7,12 @@
     margin: 0 auto;
 }
 
+.landing_image img {
+    width: 100%;
+    height: 200px;  
+    object-fit: cover;
+}
+
 .font_Redressed {
     font-family: "Redressed","arial";
     font-size: 3em;
@@ -14,10 +20,14 @@
 
 .font_Raleway{
     font-family: "Raleway","arial";
-    font-size: 2em;
-    text-align: right;
-
+    font-size: 1.5em;
+    margin-left: 6em;
 }
+.collapsible-header {
+    align-items: baseline;
+    text-transform: capitalize;
+}
+
 
 .text-shadow {
     text-shadow: 4px 4px 2px rgba(0,0,0,0.5)
