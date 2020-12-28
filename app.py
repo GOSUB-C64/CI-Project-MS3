@@ -17,8 +17,14 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_breads")
-def get_breads():
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+
+
+@app.route("/display_breads")
+def display_breads():
     breads = list(mongo.db.breads.find())
     flash("All Breads")
     return render_template("display_breads.html", breads=breads)
@@ -39,7 +45,7 @@ def add_recipe():
         }
         mongo.db.breads.insert_one(bread)
         flash("New Bread Recipe Received - Thankyou!")
-        return redirect(url_for('get_breads'))
+        return redirect(url_for('display_breads'))
     return render_template("add_recipe.html")
 
 

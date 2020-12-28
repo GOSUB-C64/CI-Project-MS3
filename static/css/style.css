@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Redressed&display=swap');
 
+body {
+    margin: 0;
+}
+
 .main-logo {
     font-family: "Redressed","arial";
     font-size: 4em;
@@ -7,18 +11,50 @@
     margin: 0 auto;
 }
 
-.landing_image img {
+.home_page_image {
+    background-image: url('/static/images/landing_page.jpg');
+    width: 100%;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* object-fit: initial; */
+}
+
+/* .add_recipe_image {
+    background-image: url('/static/images/WB3.jpg');
+    width: 100%;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* object-fit: initial; */
+} */
+
+.no-margin {
+    margin-bottom: 0px;
+}
+
+footer .row {
+    margin-bottom: 0px;
+}
+
+.lots_of_bread_image img {
     width: 100%;
     height: 200px;  
     object-fit: cover;
 }
 
-.font_Redressed {
+.add_recipe_image img {
+    width: 100%;
+    height: 100px;  
+    object-fit: cover;
+}
+
+.medium_text {
     font-family: "Redressed","arial";
     font-size: 3em;
 }
 
-.font_Raleway{
+.small_text {
     font-family: "Raleway","arial";
     font-size: 1.5em;
     margin-left: 6em;
@@ -26,6 +62,11 @@
 .collapsible-header {
     align-items: baseline;
     text-transform: capitalize;
+}
+
+.nav-wrapper h3 {
+    margin: 0;
+    margin-top: 0.3em;
 }
 
 
@@ -85,6 +126,6 @@
     margin-bottom: 11.6px;
 }
 
-.right {
+/* .right {
     text-align: right;
-}
+} */

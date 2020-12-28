@@ -3,9 +3,8 @@
     {% block content %}
     <section>
         <div class="row">
-            <div class="col s12 landing_image">
-                <img src="/static/images/mixed_breads.jpg" 
-                    alt="a selection of baked breads">
+            <div class="col s12 lots_of_bread_image">
+                <img src="/static/images/mixed_breads.jpg" alt="a selection of baked breads">
             </div>
         </div>
     </section>
@@ -15,8 +14,8 @@
             <li>
                 <div class="collapsible-header deep-purple lighten-1 white-text text-shadow">
                     <i class="fas fa-caret-down"></i>
-                    <div class="font_Redressed">{{ bread.name }}</div>
-                    <div class="font_Raleway right-align">{{ bread.description }}</div>
+                    <div class="medium_text">{{ bread.name }}</div>
+                    <div class="small_text right-align">{{ bread.description }}</div>
                 </div>
                 <div class="row collapsible-body">
                     <div class="col s6">
