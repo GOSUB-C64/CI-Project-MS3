@@ -8,7 +8,7 @@
             </div>
         </div>
     </section>
-
+    <!-- get details of bread collection from database -->
     <ul class="collapsible">
         {% for bread in breads %}
             <li>
@@ -24,7 +24,6 @@
                     <div class="col s6">
                         <p>{{ bread.method }}</p>
                     </div>
-                    <!-- <img src="{{ bread.image_url }}" class="right" width="100px"> -->
                 </div>
             </li>
         {% endfor %}

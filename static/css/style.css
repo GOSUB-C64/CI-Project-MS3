@@ -1,11 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Redressed&display=swap');
 
+html {
+    height: 100%;
+}
+
 body {
     margin: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    position: relative;
+}
+
+footer {
+    /* width: 100%; */
+    margin-top: auto;
 }
 
 .main-logo {
-    font-family: "Redressed","arial";
+    font-family: "Redressed", Arial;
     font-size: 4em;
     padding-left: 100px;
     margin: 0 auto;
@@ -17,19 +33,37 @@ body {
     height: 600px;
     background-repeat: no-repeat;
     background-size: cover;
-    /* object-fit: initial; */
+    background-attachment: fixed;
+    position: relative;
 }
 
-/* .add_recipe_image {
-    background-image: url('/static/images/WB3.jpg');
-    width: 100%;
-    height: 100px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* object-fit: initial; */
-} */
+.my_large_card_panel {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    height: 550px;
+    width: 80%;
+    z-index: 1;
+}
 
-.no-margin {
+.my_cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.my_small_card {
+    position: absolute;
+    /* flex-basis: 20%; */
+    height: 250px;
+    top: 0px;
+    left: 25px;
+    width: 20%;
+    box-sizing: border-box;
+    font-family: "Redressed", Arial;
+    font-size: 2em;
+}
+
+.no_margin {
     margin-bottom: 0px;
 }
 
@@ -50,25 +84,42 @@ footer .row {
 }
 
 .medium_text {
-    font-family: "Redressed","arial";
+    font-family: "Redressed", Arial;
     font-size: 3em;
 }
 
 .small_text {
-    font-family: "Raleway","arial";
+    font-family: "Raleway", Arial;
     font-size: 1.5em;
     margin-left: 6em;
 }
+
+.description_db {
+    font-family: "Raleway", Arial;
+    font-size: 0.6em;
+    padding: 1.0em;
+}
+
+.name_db {
+    text-transform: capitalize;
+    /* margin-bottom: 1em; */
+}
+
+.image_db {
+    position: absolute;
+    bottom: 7px;
+    left: 10px;
+}
+
 .collapsible-header {
     align-items: baseline;
     text-transform: capitalize;
 }
 
-.nav-wrapper h3 {
+.nav-wrapper h4 {
     margin: 0;
-    margin-top: 0.3em;
+    margin-top: .5em;
 }
-
 
 .text-shadow {
     text-shadow: 4px 4px 2px rgba(0,0,0,0.5)
@@ -91,7 +142,6 @@ footer .row {
     height: 80px;
     z-index: 10;
     display: flex;
-    /* justify-content:  */
 }
 
 .footer .footer-bottom i {
@@ -125,7 +175,3 @@ footer .row {
     font-size: 15px;
     margin-bottom: 11.6px;
 }
-
-/* .right {
-    text-align: right;
-} */
