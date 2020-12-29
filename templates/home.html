@@ -11,7 +11,7 @@
                         {% for bread in breads %}
                             {% if loop.index <= 4 %}
                                 <div class="card small my_small_card center-align">
-                                    <a href="{{ url_for('display_recipe')}}">
+                                    <a href="{{ url_for('display_recipe', bread_id=bread._id) }}">
                                         <div class="white-text text-shadow deep-purple lighten-2 name_db">{{ bread.name }}</div>
                                         <div class="description_db left-align">{{ bread.description }}</div>
                                         <div class="image_db">

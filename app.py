@@ -30,9 +30,10 @@ def display_breads():
     return render_template("display_breads.html", breads=breads)
 
 
-@app.route("/display_recipe")
-def display_recipe():
-    return render_template("display_recipe.html")
+@app.route("/display_recipe/<bread_id>")
+def display_recipe(bread_id):
+    bread = mongo.db.breads.find_one({"_id": ObjectId(bread_id)})
+    return render_template("display_recipe.html", bread=bread)
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])

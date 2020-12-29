@@ -1,4 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>This is where you can see recipe info</h1>
+    <div class="row card-panel grey lighten-5 my_large_card_panel">
+        <div class="white-text text-shadow deep-purple lighten-2 name_db">{{ bread.name }}</div>
+        <div class="deep-purple-text">{{ bread.ingredients }}</div>
+
+    </div>
 {% endblock %}
