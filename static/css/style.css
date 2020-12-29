@@ -52,6 +52,17 @@ main {
     font-size: 2em;
 }
 
+.small_ingredients_card {
+    position: absolute;
+    height: 80%;
+    width: 20%;
+    top: 0px;
+    left: 25px;
+    box-sizing: border-box;
+    font-family: "Raleway", Arial;
+    font-size: 2em;
+}
+
 .no_margin {
     margin-bottom: 0px;
 }

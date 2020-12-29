@@ -1,8 +1,12 @@
 {% extends "base.html" %}
-{% block content %}
-    <div class="row card-panel grey lighten-5 my_large_card_panel">
-        <div class="white-text text-shadow deep-purple lighten-2 name_db">{{ bread.name }}</div>
-        <div class="deep-purple-text">{{ bread.ingredients }}</div>
-
+{% block display_recipe %}
+    <div class="row">
+        <div class="col home_page_image"></div>
+        <!-- <div class="row card-panel grey lighten-5 my_large_card_panel">
+            <div class="white-text text-shadow deep-purple lighten-2 name_db">{{ bread.name }}</div>
+            <div class="card .small_ingredients_card">
+                <div class="deep-purple-text">{{ bread.ingredients }}</div>
+            </div>
+        </div> -->
     </div>
 {% endblock %}
