@@ -11,11 +11,14 @@
                         {% for bread in breads %}
                             {% if loop.index <= 4 %}
                                 <div class="card small my_small_card center-align">
-                                    <div class="white-text text-shadow deep-purple lighten-2 name_db">{{ bread.name }}</div>
-                                    <div class="description_db left-align">{{ bread.description }}</div>
-                                    <img src="{{ bread.image_url }}" class="image_db" height="50%" width="90%">
-
+                                    <a href="{{ url_for('display_recipe')}}">
+                                        <div class="white-text text-shadow deep-purple lighten-2 name_db">{{ bread.name }}</div>
+                                        <div class="description_db left-align">{{ bread.description }}</div>
+                                        <div class="image_db">
+                                            <img src="{{ bread.image_url }}" width="50%">
+                                        </div>
                                     <!-- <h6>Posted by: {{ bread.author }}</h6> -->
+                                    </a>
                                 </div>
                             {% endif %}
                             

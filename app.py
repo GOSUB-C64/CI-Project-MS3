@@ -23,12 +23,16 @@ def home():
     return render_template("home.html", breads=breads)
 
 
-
 @app.route("/display_breads")
 def display_breads():
     breads = list(mongo.db.breads.find())
     flash("All Breads")
     return render_template("display_breads.html", breads=breads)
+
+
+@app.route("/display_recipe")
+def display_recipe():
+    return render_template("display_recipe.html")
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
