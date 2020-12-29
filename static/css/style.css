@@ -1,17 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Redressed&display=swap');
 
-
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
 }
 
-
-
-.wrapper {
-    flex: 1;
-    position: relative; /* for footer */
+main {
+    flex: 1 0 auto;
 }
 
 .main-logo {
@@ -28,7 +24,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    /* position: relative; */
 }
 
 .my_cards {
@@ -120,15 +115,20 @@ body {
     line-height: 2;
 }
 
+.label_ingredients {
+    margin: 0px;
+}
+
+.prefix ~ label {
+    margin-left: 1rem;
+    font-size: 15px;
+    margin-bottom: 11.6px;
+}
+
 /* all footer settings */
 
-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    /* height: 100%; */
-    /* margin-top: auto; */
+.footer {
+    position: relative;
 }
 
 .footer .footer-bottom {
@@ -140,7 +140,7 @@ footer {
     z-index: 10;
 }
 
-footer .row {
+.footer .row {
     margin-bottom: 0px;
 }
 
@@ -166,15 +166,3 @@ footer .row {
     color: blue;
 }
 
-
-
-
-.label_ingredients {
-    margin: 0px;
-}
-
-.prefix ~ label {
-    margin-left: 1rem;
-    font-size: 15px;
-    margin-bottom: 11.6px;
-}
