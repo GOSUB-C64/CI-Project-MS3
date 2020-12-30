@@ -5,7 +5,7 @@
             <div class="col s12 home_page_image"></div>
             <div class="row card-panel grey lighten-5 my_large_card_panel">
                 <div class="white-text text-shadow deep-purple lighten-2 name_db_home">{{ bread.name }}
-                    <a href="{{ url_for('edit_recipe', bread_id) }}" class="btn-small deep-purple right">Edit</a>
+                    <a href="{{ url_for('edit_recipe', bread_id=bread._id) }}" class="btn-small deep-purple right">Edit</a>
                 </div>
                 <div class="row ingredients_cards">
                     <div class="card small small_ingredients_card">
