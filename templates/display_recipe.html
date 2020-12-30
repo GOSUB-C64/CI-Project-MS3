@@ -1,12 +1,23 @@
 {% extends "base.html" %}
 {% block display_recipe %}
-    <div class="row">
-        <div class="col home_page_image"></div>
-        <!-- <div class="row card-panel grey lighten-5 my_large_card_panel">
-            <div class="white-text text-shadow deep-purple lighten-2 name_db">{{ bread.name }}</div>
-            <div class="card .small_ingredients_card">
-                <div class="deep-purple-text">{{ bread.ingredients }}</div>
+    <section>
+        <div class="row">
+            <div class="col s12 home_page_image"></div>
+            <div class="row card-panel grey lighten-5 my_large_card_panel">
+                <div class="white-text text-shadow deep-purple lighten-2 name_db_home">{{ bread.name }}
+                    <a href="" class="btn-small deep-purple right">Edit</a>
+                </div>
+                <div class="row ingredients_cards">
+                    <div class="card small small_ingredients_card">
+                        <div class="deep-purple-text">Ingredients</div>
+                        <div>{{ bread.ingredients }}</div>
+                    </div>
+                    <div class="card small small_method_card">
+                        <div class="deep-purple-text">Instructions</div>
+                        <div>{{ bread.method }}</div>
+                    </div>
+                </div>
             </div>
-        </div> -->
-    </div>
+        </div>
+    </section>
 {% endblock %}

@@ -24,9 +24,15 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    /* position: relative; */
 }
 
 .my_cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ingredients_cards {
     display: flex;
     justify-content: space-between;
 }
@@ -52,15 +58,37 @@ main {
     font-size: 2em;
 }
 
+.large_ingredients_card {
+    position: relative;
+    top: 100px;
+    left: 100px;
+    height: 475px;
+    width: 80%;
+    z-index: 1;
+    padding-bottom: 100px;
+}
+
 .small_ingredients_card {
     position: absolute;
-    height: 80%;
+    height: 100% !important;
     width: 20%;
-    top: 0px;
-    left: 25px;
+    top: 0;
+    left: 0;
     box-sizing: border-box;
     font-family: "Raleway", Arial;
-    font-size: 2em;
+    font-size: 1em;
+}
+
+.small_method_card {
+    position: absolute;
+    height: 100% !important;
+    width: 70%;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", Arial;
+    font-size: 1em;
+    /* flex-grow: 1; */
 }
 
 .no_margin {
@@ -99,6 +127,11 @@ main {
 .name_db {
     text-transform: capitalize;
     font-family: "Redressed", Arial;
+}
+
+.name_db_home {
+    text-transform: capitalize;
+    font-family: "Redressed", Arial;
     font-size: 2em;
 }
 
@@ -108,6 +141,10 @@ main {
     left: 10px;
     text-align: center;
     height: 25%;
+}
+
+.btn-small {
+    margin: 5px 5px 0px 0px;
 }
 
 .collapsible-header {
