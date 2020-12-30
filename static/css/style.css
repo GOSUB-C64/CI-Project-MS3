@@ -25,7 +25,7 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    position: relative;
+    /* position: relative; */
 }
 
 .my_cards {
@@ -92,8 +92,21 @@ main {
     /* flex-grow: 1; */
 }
 
+.card-panel {
+    width: 80%;
+    padding-bottom: 50px;
+}
+
 .no_margin {
     margin-bottom: 0px;
+}
+
+section .row {
+    padding: 0;
+}
+
+.page_header {
+    margin-bottom: 0;
 }
 
 .lots_of_bread_image img {

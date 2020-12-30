@@ -17,7 +17,7 @@
     <title>World of Bread</title>
 </head>
 
-<body>
+<body class="home_page_image">
     <header>
         <!-- main top nav bar -->
         <nav class="nav-extended text-shadow deep-purple lighten-1">
@@ -56,20 +56,21 @@
         {% endwith %}
     </section>
 
+    <!-- <section>
+         <div class="col home_page_image"></div>
+    </section> -->
+
     <!-- main injected content from other pages -->
     <main class="container">
         {% block content %}
         {% endblock %}
     </main>
+
     {% block display_recipe %}
     {% endblock %}
 
     {% block homepage %}
     {% endblock %}
-
-    <section>
-         <div class="col home_page_image"></div>
-    </section>
 
     <!-- footer -->
     <footer class="page-footer deep-purple lighten-2">
