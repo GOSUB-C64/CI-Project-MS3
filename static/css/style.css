@@ -4,6 +4,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background: transparent;
 }
 
 main {
@@ -24,7 +25,7 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    /* position: relative; */
+    position: relative;
 }
 
 .my_cards {
@@ -59,7 +60,7 @@ main {
 }
 
 .large_ingredients_card {
-    position: relative;
+    /* position: relative; */
     top: 100px;
     left: 100px;
     height: 475px;
@@ -143,6 +144,9 @@ main {
     height: 25%;
 }
 
+textarea {
+    height: 6rem !important;
+}
 .btn-small {
     margin: 5px 5px 0px 0px;
 }

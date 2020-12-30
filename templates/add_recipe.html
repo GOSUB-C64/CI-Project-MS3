@@ -14,7 +14,7 @@
             <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
                 <div class="row">
                     <div class="input-field col s12">
-                        <i class="material-icons prefix">edit</i>
+                        <i class="material-icons deep-purple-text prefix">edit</i>
                         <input id="name" name="name" type="text" class="validate" 
                             minlength="5" maxlength="25" required>
                         <label for="name">Name of Bread</label>
@@ -23,7 +23,7 @@
                 <!-- add a description of bread -->
                 <div class="row">
                     <div class="input-field col s12">
-                        <i class="material-icons prefix">description</i>
+                        <i class="material-icons deep-purple-text prefix">description</i>
                         <textarea id="description" name="description" minlength="5"
                             maxlength="200" class="materialize-textarea validate" required></textarea>
                         <label for="description">Description</label>
@@ -32,7 +32,7 @@
                 <!-- add country of origin -->
                 <div class="row">
                     <div class="input-field col s12">
-                        <i class="material-icons prefix">flag</i>
+                        <i class="material-icons deep-purple-text prefix">flag</i>
                         <select id="country" name="country" class="validate" required>
                             <option value="" disabled selected>Country of Origin?</option>
                             <option value="Afganistan">Afghanistan</option>
@@ -287,27 +287,27 @@
                 <!-- add the ingredients -->
                 <div class="row">
                     <div class="col s12">
-                        <i class="fa fa-balance-scale prefix"></i>
+                        <i class="fa fa-balance-scale deep-purple-text prefix"></i>
                         <label for="ingredients" class="label_ingredients">Ingredients</label>
                         <textarea id="ingredients" name="ingredients" rows="4" cols="200" minlength="5" class="form-control validate" 
                                 placeholder="ingredient and amount on single lines --- example > 500g plain flour" required></textarea>
-                        <span>ingredient and amount on single lines --- example 500g plain flour</span>
+                        <span class="red-text">ingredient and amount on single lines --- example 500g plain flour</span>
                     </div>
                 </div>
                 <!-- add the instructions -->
                 <div class="row">
                     <div class="col s12">
-                        <i class="fa fa-list prefix"></i>
+                        <i class="fa fa-list deep-purple-text prefix"></i>
                         <label for="method" class="label_ingredients">Method</label>
                         <textarea id="method" name="method" rows="4" cols="200" minlength="5" class="form-control validate" 
                                 placeholder="Please put each step on a new line" required></textarea>
-                        <span>Please put each step on a new line</span>
+                        <span class="red-text">Please put each step on a new line</span>
                     </div>
                 </div>
                 <!-- add a temperature -->
                 <div class="row">
                     <div class="input-field col s12">
-                        <i class="fa fa-thermometer-empty prefix"></i>
+                        <i class="fa fa-thermometer-empty deep-purple-text prefix"></i>
                         <input id="temperature" name="temperature" type="text" class="validate" 
                             minlength="2" maxlength="20" required>
                         <label for="temperature">Temperature</label>
@@ -316,7 +316,7 @@
                 <!-- add a cooking time -->
                 <div class="row">
                     <div class="input-field col s12">
-                        <i class="material-icons prefix">alarm</i>
+                        <i class="material-icons deep-purple-text prefix">alarm</i>
                         <input id="time" name="time" type="text" class="validate" 
                             minlength="2" maxlength="30" required>
                         <label for="time">Cooking time</label>
@@ -325,7 +325,7 @@
                 <!-- add url of bread image -->
                 <div class="row">
                     <div class="input-field col s12">
-                        <i class="fa fa-globe prefix"></i>
+                        <i class="fa fa-globe deep-purple-text prefix"></i>
                         <input id="url" name="url" type="text" class="validate" 
                             minlength="2" maxlength="200">
                         <label for="url">Image Location(url)</label>
@@ -334,7 +334,7 @@
                 <!-- add author -->
                 <div class="row">
                     <div class="input-field col s12">
-                        <i class="fa fa-book prefix"></i>
+                        <i class="fa fa-book deep-purple-text prefix"></i>
                         <input id="author" name="author" type="text" class="validate" 
                             minlength="2" maxlength="30" required>
                         <label for="author">Author</label>
