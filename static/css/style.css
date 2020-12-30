@@ -76,10 +76,11 @@ main {
     height: 100% !important;
     width: 20%;
     top: 0;
-    left: 0;
+    left: 25px;
     box-sizing: border-box;
     font-family: "Raleway", Arial;
     font-size: 1em;
+    margin-top: 2em;
 }
 
 .small_method_card {
@@ -91,7 +92,7 @@ main {
     box-sizing: border-box;
     font-family: "Raleway", Arial;
     font-size: 1em;
-    /* flex-grow: 1; */
+    margin-top: 2em;
 }
 
 .card-panel {
@@ -168,6 +169,18 @@ textarea {
 }
 .btn-small {
     margin: 5px 5px 0px 0px;
+}
+
+.collapsible .row {
+    margin-bottom: 0;
+}
+
+.collapsible .row h4 {
+    font-family: "Raleway", Arial;
+}
+
+.collapsible-body {
+    background-color: #fff;
 }
 
 .collapsible-header {
