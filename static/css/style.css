@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Redressed&display=swap');
 
+html {
+    height: 100vh;
+}
+
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background: transparent;
 }
 
 main {
@@ -40,14 +43,10 @@ main {
 
 .my_large_card_panel {
     background-color: #fff;
-    position: absolute;
-    top: 100px;
-    left: 100px;
-    height: 475px;
     width: 80%;
-    padding-bottom: 100px !important;
     box-shadow:10px 10px 5px grey;  
-
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .my_small_card {
@@ -58,7 +57,7 @@ main {
     width: 20%;
     box-sizing: border-box;
     font-family: "Redressed", Arial;
-    font-size: 2em;
+    font-size: 1.9em;
 }
 
 .large_ingredients_card {
@@ -96,8 +95,11 @@ main {
 }
 
 .card-panel {
-    width: 80%;
-    padding-bottom: 50px;
+    margin-bottom: 50px;
+}
+
+.card {
+    padding: 20px;
 }
 
 .no_margin {
@@ -110,6 +112,11 @@ section .row {
 
 .page_header {
     margin-bottom: 0;
+}
+.header_bold {
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    margin-bottom: 20px;
 }
 
 .lots_of_bread_image img {
@@ -126,7 +133,7 @@ section .row {
 
 .medium_text {
     font-family: "Redressed", Arial;
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .small_text {
@@ -137,8 +144,8 @@ section .row {
 
 .description_db {
     font-family: "Raleway", Arial;
-    font-size: 0.6em;
-    padding: 1.0em;
+    font-size: 0.55em;
+    padding-top: 1em;
 }
 
 .name_db {
@@ -205,13 +212,14 @@ textarea {
     margin: 0px;
 }
 
-.prefix ~ label {
+/* .prefix ~ label {
     margin-left: 1rem;
     font-size: 15px;
     margin-bottom: 11.6px;
-}
+} */
 
 /* all footer settings */
+
 
 #footer-social {
     color: #fff;

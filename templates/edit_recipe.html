@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h4 class="page_header deep-purple lighten-1 center-align">Edit a recipe</h4>
+    <h5 class="page_header deep-purple lighten-1 white-text center-align">Edit a recipe</h5>
         <section>
             <div class="row">
                 <div class="col s12 add_recipe_image">
@@ -10,6 +10,8 @@
             </div>
         </section>
         <!-- add name of bread -->
+        <div class="row">
+            <div class="col m10 offset-m1 s12">
         <div class="row card-panel grey lighten-5">
             <form class="col s12" method="POST" action="{{ url_for('edit_recipe', bread_id=bread._id) }}">
                 <div class="row">
@@ -352,4 +354,7 @@
                 </div>
             </form>
         </div>
+        </div>
+        </div>
+
 {% endblock %}

@@ -1,18 +1,14 @@
 
 {% extends "base.html" %}
-    <!-- <section>
-        <div class="col s12 home_page_image"></div>
-    </section> -->
 
     {% block content %}
-
-    
+   
     <!-- get details of bread collection from database -->
     <ul class="collapsible">
         {% for bread in breads %}
             <li>
                 <div class="collapsible-header deep-purple lighten-1 white-text text-shadow">
-                    <i class="fas fa-caret-down center-align"></i>
+                    <i class="fas fa-caret-down"></i>
                     <div class="medium_text">{{- bread.name -}}</div>
                     <div class="small_text">{{- bread.description -}}</div>
                 </div>
@@ -28,8 +24,6 @@
                 </div>
             </li>
         {% endfor %}
-
     </ul>
-
 {% endblock %}
      

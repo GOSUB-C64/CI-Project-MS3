@@ -56,25 +56,18 @@
         {% endwith %}
     </section>
 
-    <!-- <section>
-         <div class="col home_page_image"></div>
-    </section> -->
-
+    
     <!-- main injected content from other pages -->
     <main class="container">
         {% block content %}
         {% endblock %}
     </main>
 
-    <main>
-        {% block display_recipe %}
-        {% endblock %}
-    </main>
-    
-    <main>
-        {% block homepage %}
-        {% endblock %}
-    </main>
+    {% block display_recipe %}
+    {% endblock display_recipe %}
+
+    {% block homepage %}
+    {% endblock homepage %}
 
     <!-- footer -->
     <footer class="page-footer deep-purple lighten-2">
@@ -101,7 +94,7 @@
         <div class="footer-copyright">
             <div class="container">
                 © 2021 Copyright Chris Curran.
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
             </div>
         </div>
     </footer>
