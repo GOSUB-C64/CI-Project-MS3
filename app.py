@@ -55,6 +55,12 @@ def add_recipe():
     return render_template("add_recipe.html")
 
 
+@app.route("/edit_recipe/<bread_id>", methods=["GET", "POST"])
+def edit_recipe(bread_id):
+    bread = mongo.db.breads.find_one({"_id": ObjectId(bread_id)})
+    return render_template("edit_recipe.html", bread=bread)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
