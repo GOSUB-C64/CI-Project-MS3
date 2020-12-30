@@ -39,13 +39,15 @@ main {
 }
 
 .my_large_card_panel {
+    background-color: #fff;
     position: absolute;
     top: 100px;
     left: 100px;
     height: 475px;
     width: 80%;
-    z-index: 1;
     padding-bottom: 100px !important;
+    box-shadow:10px 10px 5px grey;  
+
 }
 
 .my_small_card {
@@ -151,10 +153,14 @@ section .row {
 
 .image_db {
     position: absolute;
-    bottom: 7px;
+    bottom: 30px;
     left: 10px;
     text-align: center;
     height: 25%;
+}
+
+.bottom-text {
+    bottom: 5px;
 }
 
 textarea {

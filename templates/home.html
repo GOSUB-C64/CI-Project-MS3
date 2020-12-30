@@ -2,9 +2,7 @@
 {% block homepage %}
 <section>
     <!-- display featured breads -->
-    <div class="row no_margin">
-        <div class="row no_margin">
-            <div class="card-panel grey lighten-5 my_large_card_panel">
+            <div class="my_large_card_panel">
                 <h1 class="medium_text white-text text-shadow deep-purple lighten-2">Featured Breads</h1>
                 <div class="row my_cards">
                     {% for bread in breads %}
@@ -15,15 +13,13 @@
                                     <div class="description_db deep-purple-text left-align">{{- bread.description -}}</div>
                                     <div class="image_db">
                                         <img src="{{ bread.image_url }}" width="50%">
+                                        <h6 class="bottom-text deep-purple-text ">Posted by: {{ bread.author -}}</h6>
                                     </div>
-                                    <!-- <h6>Posted by: {{ bread.author }}</h6> -->
                                 </a>
                             </div>
                         {% endif %}
                     {% endfor %}
                 </div>
             </div>
-        </div>
-    </div>
 </section>
 {% endblock %}
