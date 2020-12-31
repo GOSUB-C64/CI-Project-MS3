@@ -112,5 +112,18 @@ Colours chosen to reflect simplicity.
 
  + To view the wirefrmes for this project [click here](https://github.com/GOSUB-C64/CI-Project-MS3/tree/master/static/project_wireframes/data-centric-MS3-project-wireframes.pdf)
 
+The wireframe design had to be augmented for practicality and timing reasons in that I had to reduce the overall functionality of the website due to project time constraints.
 
+Unused( but: to be added at a later date )
+
++ Registration
++ Log in
++ Log out
++ Searching ability
++ Deletion
+
+Pages that have been implemented:
+
++ home - shows some breads which are featured from the database
++ display_breads - lists all breads in database in alphabetical order
 

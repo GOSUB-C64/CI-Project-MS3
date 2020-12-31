@@ -19,13 +19,13 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    breads = list(mongo.db.breads.find())
+    breads = list(mongo.db.breads.find().sort("name", 1))
     return render_template("home.html", breads=breads)
 
 
 @app.route("/display_breads")
 def display_breads():
-    breads = list(mongo.db.breads.find())
+    breads = list(mongo.db.breads.find().sort("name", 1))
     flash("All Breads")
     return render_template("display_breads.html", breads=breads)
 
