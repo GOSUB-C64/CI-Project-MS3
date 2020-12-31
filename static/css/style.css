@@ -51,13 +51,13 @@ main {
 
 .my_small_card {
     position: absolute;
-    height: 250px;
+    height: 400px;
     top: 0px;
     left: 25px;
     width: 20%;
     box-sizing: border-box;
     font-family: "Redressed", Arial;
-    font-size: 1.9em;
+    font-size: 1.8em;
 }
 
 .large_ingredients_card {
@@ -161,10 +161,10 @@ section .row {
 
 .image_db {
     position: absolute;
-    bottom: 30px;
+    padding: 10px;
     left: 10px;
     text-align: center;
-    height: 25%;
+    height: 50%;
 }
 
 .bottom-text {
