@@ -220,4 +220,83 @@ These are the technoloigies that were used to create this website. Click on any 
 + Found 6 <img alt=""> errors which were solved by adding some Jinja expressions into the quotes for example ```<img src="/images/image.jpg" alt="{{ expression }}">```
 + All CSS was tested using [this validator](https://jigsaw.w3.org/css-validator/validator) and all tests passed successfully.
 ![Passed](/static/images/screenshots/css_validator.png)
-+ Python code was ran through [this validator](https://extendsclass.com/python-tester.html)
++ Python code was ran through [this validator](https://extendsclass.com/python-tester.html) and no syntax errors found.
+![Passed](/static/images/screenshots/python_validator.png)
+
+
+## Manual Testing
+
++ Test #1: VISUAL - do all pages on the site look good to the eye?
+    + Yes.
++ Test #2: DATA VERIFICATION: Is the app able to receive data back from the Mongo Database?
+    + Yes.
++ Test #3: EDITING A RECORD: After editing a record and updating the database, did viewing the record again confirm this?
+    + Yes.
+
+
+## Testing user stories
+
+### user story 1
+
++ On accessing the site the user should be able to see a welcome image which is related to the overall purpose of the website.
+    + **Comment** (To be implemented later - due to time restrictions)
+
+### user story 2
+
++ As a user (who is interested in what this site is all about) I'd expect to see a short description of the reason for the site's existence and what the user can achieve during their visit.
+
+    + **Comment** (To be implemented later - due to time restrictions)
+
+### user story 3
++ As a contributing user, I'd like to ADD to the website by inputting information so it is grouped with the rest.
+
+    + **Comment** *"yes this functionality was added and tested by filling in the input fields of the form and getting a status message of 'added successfully' when form was submitted to the database"*
+
+### user story 4
++ As a returning visitor I'd like to see my recently added information.
+
+    + **Comment** *"If you click on 'All Recipes' you can see your entry listed with some others alphabetically"*
+
+### user story 5
++ As a contributing user, I'd like to have the ability to edit/update my recently added contribution.
+
+    + **Comment** *"Yes you can, just find your entry on the home page and click any content within the card and you'll be taken to the 'disply_recipe' page where you can see the recipe in its entirety and from here can click the 'edit' button at top right to edit your contribution"*
+
+### user story 6
++ As a contributing user, I'd like the power to delete my recently added information if I've changed my mind.
+
+    + **Comment** *" TBA "*
+
+### user story 7
++ As a returning user - I'd like the ability to search through all the available information using certain search criteria; for example... search all records on the world encyclopedia website for information on 'forests' - it should list ALL forests.
+
+    + **Comment** *"not implemented due to time restraints"*
+
+### user story 8
++ As any user to the site - I must not be able to change/remove any other records on file that do not belong to me.
+
+    + **Comment** *"no user autentication implemented at the moment but will be at a later date"*
+
+### user story 9
++ As a first time user - I should be able to register with the site and then log in.
+
+    + **Comment** *"no user autentication implemented"*
+
+### user story 10
++ As a returning user I should have the ability to 'login' and/or 'logout' with confirmation on screen
+
+    + **Comment** *"no user autentication implemented"*
+
+### user story 11
++ As any user I should be able to easily navigate to what I want to do next.
+
+    + **Comment** *"The site is fairly intuitive with nav menu and the user easily not easily distracted due to the simplicity of the site"*
+
+### user story 12
++ As a contributing user after adding to the site there should be a thankyou message thanking the user for their contribution.
+
+    + **Comment** *"Yes a message pops up in the flash messages thanking the user for their contribution"*
+
+
+# Deployment
+
