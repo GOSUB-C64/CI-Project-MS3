@@ -10,23 +10,23 @@
 # Contents
 
 + <a href="#context">Context</a>
-+ UX
-  + Summary
-  + Design
-  + User Stories
-  + Wireframes
-+ Features
-  + At present
-  + In future
-+ Technologies used
-+ Testing
-  + Automated
-  + Manual
-  + Responsiveness
-  + Issues solved
-  + Unsolved Issues
-+ Deployment
-+ Credits
++ <a href="#ux">UX</a>
+  + <a href="#ux">Summary</a>
+  + <a href="#ux">Design</a>
+  + <a href="#ux">User Stories</a>
+  + <a href="#ux">Wireframes</a>
++ <a href="#ux">Features</a>
+  + <a href="#ux">At present</a>
+  + <a href="#ux">In future</a>
++ <a href="#ux">Technologies used</a>
++ <a href="#ux">Testing</a>
+  + <a href="#ux"> Automated</a>
+  + <a href="#ux">Manual</a>
+  + <a href="#ux">Responsiveness</a>
+  + <a href="#ux">Issues solved</a>
+  + <a href="#ux">Unsolved Issues</a>
++ <a href="#ux">Deployment</a>
++ <a href="#ux">Credits</a>
 
 
 <div id="context"></div>
@@ -107,6 +107,10 @@ Colours chosen to reflect simplicity.
     As a contributing user after adding to the site there should be a thankyou message thanking the user for their contribution.
 
 <div><a href="#top">TOP</a></div>
+
+## Wireframes
+
+ + To view the wirefrmes for this project [click here](https://github.com/GOSUB-C64/CI-Project-MS3/tree/master/static/project_wireframes/data-centric-MS3-project-wireframes.pdf)
 
 
 
