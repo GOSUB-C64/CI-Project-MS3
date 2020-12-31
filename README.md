@@ -1,6 +1,6 @@
 <!-- Image sourced from Hello World! 
     in 100 Programming Languages | beanz Magazine kidscodecs.com -->
-<img src="/static/images/helloWorldBread.jpeg" width="200px" height="200px" style="margin: 0;">
+<img src="/static/images/screenshots/helloWorldBread.jpeg" width="200px" height="200px" style="margin: 0;">
 
 # World of Breads
 * Milestone Project #3 
@@ -214,4 +214,10 @@ These are the technoloigies that were used to create this website. Click on any 
 
 # Testing
 
+## Automated
 
++ All HTML was tested using a [HTML Validator](https://validator.w3.org/nu/#textarea) by entering the deployed heroku website address and running the checker.
++ Found 6 <img alt=""> errors which were solved by adding some Jinja expressions into the quotes for example ```<img src="/images/image.jpg" alt="{{ expression }}">```
++ All CSS was tested using [this validator](https://jigsaw.w3.org/css-validator/validator) and all tests passed successfully.
+![Passed](/static/images/screenshots/css_validator.png)
++ Python code was ran through [this validator](https://extendsclass.com/python-tester.html)
