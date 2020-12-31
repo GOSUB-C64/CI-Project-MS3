@@ -11,22 +11,23 @@
 
 + <a href="#context">Context</a>
 + <a href="#ux">UX</a>
-  + <a href="#ux">Summary</a>
-  + <a href="#ux">Design</a>
-  + <a href="#ux">User Stories</a>
-  + <a href="#ux">Wireframes</a>
-+ <a href="#ux">Features</a>
-  + <a href="#ux">At present</a>
-  + <a href="#ux">In future</a>
-+ <a href="#ux">Technologies used</a>
-+ <a href="#ux">Testing</a>
-  + <a href="#ux"> Automated</a>
-  + <a href="#ux">Manual</a>
-  + <a href="#ux">Responsiveness</a>
-  + <a href="#ux">Issues solved</a>
-  + <a href="#ux">Unsolved Issues</a>
-+ <a href="#ux">Deployment</a>
-+ <a href="#ux">Credits</a>
+  + <a href="#summary">Summary</a>
+  + <a href="#design">Design</a>
+  + <a href="#user">User Stories / Goals</a>
+  + <a href="#dev">Developer's / Goals</a>
+  + <a href="#wire">Wireframes</a>
++ <a href="#feats">Features</a>
+  + <a href="#now">At present</a>
+  + <a href="#later">In future</a>
++ <a href="#tech">Technologies used</a>
++ <a href="#tests">Testing</a>
+  + <a href="#auto"> Automated</a>
+  + <a href="#man">Manual</a>
+  + <a href="#res">Responsiveness</a>
+  + <a href="#resolved">Issues solved</a>
+  + <a href="#unsolved">Unsolved Issues</a>
++ <a href="#deploy">Deployment</a>
++ <a href="#cred">Credits</a>
 
 
 <div id="context"></div>
@@ -106,24 +107,33 @@ Colours chosen to reflect simplicity.
 
     As a contributing user after adding to the site there should be a thankyou message thanking the user for their contribution.
 
-<div><a href="#top">TOP</a></div>
+<div><a href="#top">(TOP)</a></div>
 
 ## Wireframes
 
  + To view the wirefrmes for this project [click here](https://github.com/GOSUB-C64/CI-Project-MS3/tree/master/static/project_wireframes/data-centric-MS3-project-wireframes.pdf)
 
-The wireframe design had to be augmented for practicality and timing reasons in that I had to reduce the overall functionality of the website due to project time constraints.
+The final implementation based on the original wireframe design had to be augmented for practicality and timing reasons in that I had to reduce the overall functionality of the website due to project time constraints.
 
-Unused( but: to be added at a later date )
+Unused (but: to be added at a later date)
 
 + Registration
 + Log in
 + Log out
 + Searching ability
-+ Deletion
 
-Pages that have been implemented:
 
-+ home - shows some breads which are featured from the database
-+ display_breads - lists all breads in database in alphabetical order
+Of the pages that have been implemented, changes from the original design (wireframes) are as follows...
+
++ homepage shows one row of 4 cards instead of the initial 2 rows of 3 cards due to wanting to get more information displayed to the user about the recipe.
++ display_breads.html - lists all breads in database. This page needed to have more breathing space for the content compared to what was originally thought as some 'methods/instructions' are quite long in the recipe.
++ display_recipe.html - which details the ingredients and method on how to make the selected bread yourself accompanied by an image of the bread.
++ add_recipe - final version remained close to concept with only a few extra fields needed for clarity -e.g. a cooking temperature.
++ edit_recipe - here you can edit the bread recipe you've just clicked on to change any details you like. This page is quite similar to the edit_recipe page so most of the design was already done and reused.
+
+
+All functionality of C.R.U.D. has been put in place.
+
+
+
 
