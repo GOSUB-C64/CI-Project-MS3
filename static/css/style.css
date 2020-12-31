@@ -50,9 +50,7 @@ main {
 }
 
 .my_small_card {
-    position: absolute;
-    height: 400px;
-    top: 0px;
+    position: relative;
     left: 25px;
     width: 20%;
     box-sizing: border-box;
@@ -99,7 +97,7 @@ main {
 }
 
 .card {
-    padding: 20px;
+    padding: 10px;
 }
 
 .no_margin {
@@ -159,15 +157,15 @@ section .row {
     font-size: 2em;
 }
 
-.image_db {
-    position: absolute;
+.image_db img {
     padding: 10px;
     left: 10px;
-    text-align: center;
-    height: 50%;
+    height: 100%;
+    width: 100%;
 }
 
 .bottom-text {
+    position: absolute;
     bottom: 5px;
 }
 
