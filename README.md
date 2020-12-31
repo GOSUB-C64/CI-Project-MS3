@@ -209,7 +209,7 @@ These are the technoloigies that were used to create this website. Click on any 
 + [Balsamiq](https://stackshare.io/balsamiq)
 + [Materialize CSS](https://materializecss.com/)
 + [Flask](https://www.tutorialspoint.com/python_web_development_libraries/python_web_development_libraries_flask_framework.htm)
-
++ [Jinja Templaing](https://docs.appseed.us/what-is/jinja/)
 
 
 # Testing
@@ -300,3 +300,4 @@ These are the technoloigies that were used to create this website. Click on any 
 
 # Deployment
 
++ GitHub Pages wont suffice for this project as it doesn't support Python or Jinja Templating.
