@@ -17,8 +17,8 @@
   + <a href="#dev">Developer's / Goals</a>
   + <a href="#wire">Wireframes</a>
 + <a href="#feats">Features</a>
-  + <a href="#now">At present</a>
-  + <a href="#later">In future</a>
+  + <a href="#feats">At present</a>
+  + <a href="#feats">In future</a>
 + <a href="#tech">Technologies used</a>
 + <a href="#tests">Testing</a>
   + <a href="#auto"> Automated</a>
@@ -36,7 +36,13 @@
 
 'World Of Bread' was an idea I came up with because of my background as a chef and the love of the art of making fantastic loaves of bread with such simple ingredients as flour and water and just the sheer pleasure of eating it.
 
+
+<div id="ux"></div>
+
 # UX
+
+
+<div id="summary"></div>
 
 ## Summary
 
@@ -50,9 +56,16 @@ A user can:
 + not delete any recipes.
 
 
+
+<div id="design"></div>
+
 ## Design
 Colours chosen to reflect simplicity.
 
+
+
+
+<div id="user"></div>
 
 # User Stories
 
@@ -109,6 +122,19 @@ Colours chosen to reflect simplicity.
 
 <div><a href="#top">(TOP)</a></div>
 
+
+
+
+
+<div id="dev"></div>
+
+## Developer's Goals
+
+
+
+
+<div id="wire"></div>
+
 ## Wireframes
 
  + To view the wirefrmes for this project [click here](https://github.com/GOSUB-C64/CI-Project-MS3/tree/master/static/project_wireframes/data-centric-MS3-project-wireframes.pdf)
@@ -134,8 +160,58 @@ Of the pages that have been implemented, changes from the original design (wiref
 
 All functionality of C.R.U.D. has been put in place.
 
+<div id="feats"></div>
 
 # Features
 
+## present features
+
++ #1 Users can view all recipes in alphabetical order in an accordian style page control.
+
++ #2 Users can add their own bread recipes to the collection and then view them.
+
++ #3 Users can view the first 4 recipes stored in the collection that have a field of 'is_featured' set to true.
+
++ #4 The input for the 'country of origin' section has been controlled by a selector.
+
+
+## future features
+
++ #1 Users will be able to print out a readable copy of the chosen recipe.
+
++ #2 Users' image url's will be processed so that only a relative url is used. This will ensure optimal page loading times.
+
++ #3 A login/logout and registration ability should be added to keep site secure.
+
+
+
+<div id="tech"></div>
+
+# Technologies used
+
+These are the technoloigies that were used to create this website. Click on any one of them for more information.
+
++ [HTML](https://www.tutorialrepublic.com/html-tutorial/)
++ [CSS](https://www.tutorialrepublic.com/css-tutorial/)
++ [Javascript](https://www.tutorialrepublic.com/javascript-tutorial/)
++ [jQuery](https://www.tutorialrepublic.com/jquery-tutorial/)
++ [Python3](https://www.python.org)
++ [PyMongo](https://pypi.org/project/pymongo/)
++ [MongoDB](https://www.mongodb.com/2)
++ [Heroku](https://www.heroku.com/what)
++ [Gitpod](https://www.gitpod.io/)
++ [Github](https://www.howtogeek.com/180167/htg-explains-what-is-github-and-what-do-geeks-use-it-for/)
++ [Font Awesome](https://fontawesome.com/)
++ [Google Fonts](https://fonts.google.com/)
++ [Favicon](https://favicon.io/)
++ [Image Resizer](https://imageresizer.com/)
++ [LightHouse](https://developers.google.com/web/tools/lighthouse/)
++ [Balsamiq](https://stackshare.io/balsamiq)
++ [Materialize CSS](https://materializecss.com/)
++ [Flask](https://www.tutorialspoint.com/python_web_development_libraries/python_web_development_libraries_flask_framework.htm)
+
+
+
+# Testing
 
 
