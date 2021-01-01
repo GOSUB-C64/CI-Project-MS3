@@ -300,4 +300,84 @@ These are the technoloigies that were used to create this website. Click on any 
 
 # Deployment
 
-+ GitHub Pages wont suffice for this project as it doesn't support Python or Jinja Templating.
++ GitHub Pages wont suffice for this project as it doesn't support the Python3 programming language, a non-relational database like SQL, or Jinja Templating.
+
+Outlined below are the steps needed to deploy a website to Heroku.
+1. The first thing we need to do is tell Heroku what dependencies are need to run our app so in the Command Line Interface (which I'll refer to as the **CLI** going forward) type ```pip3 freeze --local > requirements.txt```
+2. Now we need to give Heroku a 'Procfile'. Heroku automatically looks for this file so it can know how to run our app. You can ceate this file by typing ```echo web: python app.py > Procfile``` into the CLI and make sure to give the filename an uppercase 'P' else it wont work.
+3. These files should now show up in your files list in the file explorer.
+4. Important to note that the Procfile sometimes adds a blank line to the last line of the file (the only line in this case) so remove it as it may cause runtime problems with Heroku trying to run apps.
+5. Next go to the Heroku website and log in > create new app > and give it a unique name.
+6. Next select the region then **create app**
+7. Next we need to connect our app to Heroku and we can do it in a couple different ways...
+    +  ## Using the Heroku Toolbelt via the CLI, so type...
+        + ```npm install -g heroku```
+        + next, when Heroku has installed, type ```heroku login -1``` and enter your Heroku login details.
+        + To see any apps that was created earlier type ```Apps``` in the CLI
+        + To rename an app type ```heroku apps:rename ``` then the new app name.
+        + Next, the web files will need to be 'pushed' to Heroku.
+        + But first the Heroku app needs to be linked back to Git local repository.
+            + After getting the files all staged by typing ```git add .``` or ```git add -A``` followed by a commit message ``` git commit -m "your commit message to git goes here" ```
+            + next - retrieve the Heroku git URL from the settings menu page in Heroku website
+            + In the CLI type ```git remote add```, then a name for our new remote, for example **heroku** then paste in the Heroku Git URL.
+            + To check this has set up properly, type ```git remote -v``` and you should see all available remote connections we can use to push our website to.
+            + To push to the newly created remote on Heroku - type ```git push -u heroku master``` and this will push our code to Heroku just like pushing to Github.
+            + Because the files **requirements.txt** and **Procfile** were created earlier, there shouldnt be any difficulties in pushing your code to Heroku
+            + see [here](https://devcenter.heroku.com/categories/deploying-with-git) for more information on deploying from Git to Heroku.
+
+
+    + ##  Automatic Deployment from GitHub repository.
+        + Click the **deploy** menu tab in the Heroku dashboard screen.
+        + Next click on the **connect to Github** button 
+        + Your Github profile will appear and next to that you can select your repository name that you want Heroku to connect to.
+        + Click **search** then click **connect**
+        + Next we have to inform Heroku of any hidden environment variables so that our app can run problem free.
+        + Still on Heroku, click on the **Settings** menu tab, and then click on **Reveal Config Vars**
+        + Here we can securely tell Heroku which variables are required.
+        + In a file called *env.py*, there should be a few different variables that were created for seamless connection to Git and you may have other environment variables for other platforms such as databases(MongoDB)
+        + The first variable is **IP**, with the value of **0.0.0.0**
+        + Next, the **PORT**, which is **5000**
+        + For the **SECRET_KEY**, let's copy that from the *env.py* file, then paste it into Heroku.
+        + Next the **MONGO_URI** string goes here.
+        + Finally - **MONGO_DBNAME** is the name of the database to connect to.
+        + Next in the **deploy** menu tab click **Enable automatic deployment**
+        + Lastly click on **Deploy branch** for Heroku to connect to Github.
+        + You should see this setting up on screen.
+        + When done you can click **Open App** if all went well you should be able to see your app with your new Heroku URL.
+  
+
+# How to download and run repository on Local Machine
+
++ There are 2 main ways to do this:
+    + Clone a copy from Github.
+    + Use a **browser plugin or addon** which simplifies matters.
+
+## Clone a copy
+1. Go to [this Github repository](https://github.com/GOSUB-C64/CI-Project-MS3) and click on the **Code** button
+2. This will open up the small *Clone* window.
+3. Keeping the 'HTTPS' tab selected, click to copy the provided url link.
+4. Next , open your preferred IDE with a previously created new Github repository and in the CLI navigate to the directory you'd like to clone to.
+5. Type ```git clone``` and paste in the copied link from the clipboard and execute that line.
+6. When the repo has been cloned you should see all the files associated with this workspace.
+7. Next you'll have to create the **env.py** file spoken of previously and add these settings..
+    + ```import os```
+    + ```os.environ.setdefault("IP", "0.0.0.0")```
+    + ```os.environ.setdefault("PORT", "5000")```
+    + ```os.environ.setdefault("SECRET_KEY", "your-secret-key-goes-here")```
+    + ```os.environ.setdefault("MONGO_URI", "mongodb+srv://root:your-password-goes-here@myfirstcluster.9yyun.mongodb.net/world_of_bread?retryWrites=true&w=majority")```
+    + ```os.environ.setdefault("MONGO_DBNAME", "name-of-your-database-goes-here")```
+8. After this has been entered and all is correct, you can push back to your own Github repo.
+
+
+## Use a browser plugin or addon
+
+1. If using Google Chrome:
+    + Click 3 dots button under the **x** button for exiting browser to access the main menu
+    + Find More Tools > Extensions
+    + From the main menu (burger icon - top left) find and click **open web store**
+    + From here search for **gitpod** extension and click *Gitpod - Dev Environments in a Browser Tab* to install to your Google Chrome Browser.
+    + Once its installed and running go to [this Github repository](https://github.com/GOSUB-C64/CI-Project-MS3)
+    + Now click the green Gitpod button which should have appeared next to the CODE button.
+    + The rest of the process is automatic.
+    + After it has fully finished downloading, you can simply run the app by typing ```python3 app.py``` in the CLI terminal window.
+    
