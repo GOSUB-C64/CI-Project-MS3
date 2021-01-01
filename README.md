@@ -67,10 +67,9 @@ Colours chosen to reflect simplicity.
 
 <div id="user"></div>
 
-# User Stories
+# User Stories / Goals of the user
 
-## Ideas to assist in developing MS3 project.
-(overall goal - I want the site to grow) 
+### These are about how the site is to work from a user point of view.
 
 + user story 1
 
@@ -130,7 +129,7 @@ Colours chosen to reflect simplicity.
 
 ## Developer's Goals
 
-
+The long-term goal for the developer/website owner is to eventually have a substantial pool of bread recipes from every corner of the planet.
 
 
 <div id="wire"></div>
@@ -192,24 +191,41 @@ All functionality of C.R.U.D. has been put in place.
 These are the technoloigies that were used to create this website. Click on any one of them for more information.
 
 + [HTML](https://www.tutorialrepublic.com/html-tutorial/)
+    - ***Hypertext Markup Language is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets and scripting languages such as JavaScript***
 + [CSS](https://www.tutorialrepublic.com/css-tutorial/)
+    - ***CSS is short for Cascading Style Sheets, and is the preferred way for setting the look and feel of a website***
 + [Javascript](https://www.tutorialrepublic.com/javascript-tutorial/)
+    - ***JavaScript is the Programming Language for the Web. JavaScript can update and change both HTML and CSS***
 + [jQuery](https://www.tutorialrepublic.com/jquery-tutorial/)
+    - ***jQuery is a JavaScript library designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax***
 + [Python3](https://www.python.org)
+    - ***Python is an interpreted, high-level and general-purpose programming language***
 + [PyMongo](https://pypi.org/project/pymongo/)
-+ [MongoDB](https://www.mongodb.com/2)
+    - ***pymongo is a native Python driver for MongoDB***
++ [MongoDB](https://www.mongodb.com/2) 
+    - ***this is where the database was created***
 + [Heroku](https://www.heroku.com/what)
+    - ***A hosting platform like Github pages but with the ability to support more frameworks***
 + [Gitpod](https://www.gitpod.io/)
+    - ***Gitpod is an online IDE that supports many languages and Git commands***
 + [Github](https://www.howtogeek.com/180167/htg-explains-what-is-github-and-what-do-geeks-use-it-for/)
+    - ***GitHub provides hosting for software development and version control using Git. It offers the distributed version control and source code management functionality of Git, plus its own features***
 + [Font Awesome](https://fontawesome.com/)
+    - ***A great free source of icons and fonts for use in web development***
 + [Google Fonts](https://fonts.google.com/)
+    - ***A wealth of amazing free fonts for developer usage***
 + [Favicon](https://favicon.io/)
+    - ***Make your browser tabs stand out and develop free icons for your project***
 + [Image Resizer](https://imageresizer.com/)
+    - ***A great online image resizer - just upload > resize > download***
 + [LightHouse](https://developers.google.com/web/tools/lighthouse/)
+    - ***Software used to creat a performance audit for your website***
 + [Balsamiq](https://stackshare.io/balsamiq)
+    - ***Making wireframe designing simply effortless!***
 + [Materialize CSS](https://materializecss.com/)
+    - ***A modern responsiveness css framework which is based on Material Design by Google*** 
 + [Flask](https://www.tutorialspoint.com/python_web_development_libraries/python_web_development_libraries_flask_framework.htm)
-+ [Jinja Templaing](https://docs.appseed.us/what-is/jinja/)
+    - ***Flask is a web application framework written in Python.  Flask is based on the Werkzeg WSGI toolkit and the Jinja2 template engine***
 
 
 # Testing
@@ -348,6 +364,7 @@ Outlined below are the steps needed to deploy a website to Heroku.
 
 # How to download and run repository on Local Machine
 
+## Its important to note here that
 + There are 2 main ways to do this:
     + Clone a copy from Github.
     + Use a **browser plugin or addon** which simplifies matters.
@@ -372,12 +389,21 @@ Outlined below are the steps needed to deploy a website to Heroku.
 ## Use a browser plugin or addon
 
 1. If using Google Chrome:
-    + Click 3 dots button under the **x** button for exiting browser to access the main menu
+    + Click 3 dots to access the main menu (this can be found under the **x** button for exiting browser.
     + Find More Tools > Extensions
     + From the main menu (burger icon - top left) find and click **open web store**
     + From here search for **gitpod** extension and click *Gitpod - Dev Environments in a Browser Tab* to install to your Google Chrome Browser.
     + Once its installed and running go to [this Github repository](https://github.com/GOSUB-C64/CI-Project-MS3)
     + Now click the green Gitpod button which should have appeared next to the CODE button.
     + The rest of the process is automatic.
-    + After it has fully finished downloading, you can simply run the app by typing ```python3 app.py``` in the CLI terminal window.
+    + Next install all the dependancies from the included requirements.txt file...
+        + type ```pip3 install -r requirements.txt```
+    + After this you need to create your own **env.py** file with your own credentials so the app can be finally run on your own local system.
     
+2. If using Firefox:
+    + go to https://addons.mozilla.org/en-GB/firefox/ on firefox browser
+    + search for **gitpod** addon in the addon search box
+    + follow on screen instructions to install.
+
+
+
