@@ -34,6 +34,7 @@
                     <li><a href="{{ url_for('login') }}">Login</a></li>
                     <li><a href="{{ url_for('display_breads') }}">All Recipes</a></li>
                     <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 </ul>
             </div>
         </nav>
@@ -48,6 +49,8 @@
             <li><a href="{{ url_for('login') }}">Login</a></li>
             <li><a href="{{ url_for('display_breads') }}">All Recipes</a></li>
             <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+
         </ul>
     </header>
     

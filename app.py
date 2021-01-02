@@ -43,6 +43,7 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration successful")
+        return redirect(url_for("profile.html", username=session["user"]))
     return render_template("register.html")
 
 
@@ -58,6 +59,8 @@ def login():
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("password").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for(
+                    'profile', username=session["user"]))
             else:
                 # passwords dont match
                 flash("Username and/or Password don't match")
@@ -70,8 +73,17 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # get session users' username from database
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("profile.html", username=username)
+
+
 @app.route("/display_breads")
 def display_breads():
+    # sort the names of the breads list #
     breads = list(mongo.db.breads.find().sort("name", 1))
     flash("All Breads")
     return render_template("display_breads.html", breads=breads)
