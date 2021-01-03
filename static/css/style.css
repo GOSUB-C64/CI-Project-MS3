@@ -58,21 +58,20 @@ main {
     font-size: 1.8em;
     text-align: center;
 }
-.del_edit {
-    position: absolute;
-    display: flex;
-    margin: auto;
-    flex-direction: column;
-}
 
-.del_edit i {
+.del_edit {
+    position: relative;
+} 
+
+#del_edit_icons {
+    position: absolute;
     bottom: 0;
-    justify-content: flex-end;
-    /* align-items: end; */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }
 
 .large_ingredients_card {
-    /* position: relative; */
     top: 100px;
     left: 100px;
     height: 475px;
@@ -181,6 +180,7 @@ section .row {
     height: 100%;
     width: 100%;
 }
+
 .collapsible-body img {
     margin-top: 100px;
     max-width: 100%;
@@ -190,7 +190,6 @@ section .row {
     border: 1px solid #673ab7;
     box-shadow: 10px 10px 5px grey;  
     text-align: center;
-
 }
 
 .bottom-text {
@@ -239,18 +238,11 @@ textarea {
     margin: 0px;
 }
 
-/* .prefix ~ label {
-    margin-left: 1rem;
-    font-size: 15px;
-    margin-bottom: 11.6px;
-} */
-
 /* all footer settings */
 
 
 #footer-social {
     color: #fff;
-    /* text-align: right; */
 }
 
 #footer-social li {
