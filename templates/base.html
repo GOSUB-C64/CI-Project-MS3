@@ -30,11 +30,15 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right links">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
-                    <li><a href="{{ url_for('display_breads') }}">All Recipes</a></li>
-                    <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                    {% if session.user %}
+                        <li><a href="{{ url_for('display_breads') }}">All Recipes</a></li>
+                        <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -45,12 +49,15 @@
                 <h5 class="center-align deep-purple white-text text-shadow lighten-1">World Of Breads</h5>
             </li>
             <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
-            <li><a href="{{ url_for('login') }}">Login</a></li>
-            <li><a href="{{ url_for('display_breads') }}">All Recipes</a></li>
-            <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-
+            {% if session.user %}
+                <li><a href="{{ url_for('display_breads') }}">All Recipes</a></li>
+                <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            {% else %}
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+            {% endif %}
         </ul>
     </header>
     

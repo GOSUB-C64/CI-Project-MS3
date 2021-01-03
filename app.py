@@ -28,8 +28,7 @@ def home():
 def register():
     if request.method == "POST":
         # check if username already exists in database
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+        existing_user = mongo.db.users.find_one({"username": request.form.get("username").lower()})
         if existing_user:
             flash("Username already exists")
             return redirect(url_for('register'))
@@ -38,12 +37,13 @@ def register():
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
-        mongo.db.users.insert(register)
+        mongo.db.users.insert_one(register)
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration successful")
         return redirect(url_for("profile.html", username=session["user"]))
+
     return render_template("register.html")
 
 
@@ -57,10 +57,11 @@ def login():
             # check hashed password against users' input
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
-                session["user"] = request.form.get("password").lower()
-                flash("Welcome, {}".format(request.form.get("username")))
-                return redirect(url_for(
-                    'profile', username=session["user"]))
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
+                    request.form.get("username").capitalize()))
+                return redirect(
+                    url_for('profile', username=session["user"]))
             else:
                 # passwords dont match
                 flash("Username and/or Password don't match")
@@ -78,7 +79,10 @@ def profile(username):
     # get session users' username from database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("profile.html", username=username)
+    if session["user"]:
+        return render_template("profile.html", username=username)
+
+    return redirect(url_for("login"))
 
 
 @app.route("/display_breads")
@@ -133,6 +137,13 @@ def edit_recipe(bread_id):
 
     bread = mongo.db.breads.find_one({"_id": ObjectId(bread_id)})
     return render_template("edit_recipe.html", bread=bread)
+
+
+@app.route("/logout")
+def logout():
+    flash("You have been logged out!")
+    session.pop("user")
+    return redirect(url_for('login'))
 
 
 if __name__ == "__main__":
