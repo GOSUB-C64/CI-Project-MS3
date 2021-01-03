@@ -18,35 +18,6 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/home")
-def home():
-    breads = list(mongo.db.breads.find().sort("name", 1))
-    return render_template("home.html", breads=breads)
-
-
-@app.route("/register", methods=["GET", "POST"])
-def register():
-    if request.method == "POST":
-        # check if username already exists in database
-        existing_user = mongo.db.users.find_one({"username": request.form.get("username").lower()})
-        if existing_user:
-            flash("Username already exists")
-            return redirect(url_for('register'))
-
-        register = {
-            "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
-        }
-        mongo.db.users.insert_one(register)
-
-        # put the new user into 'session' cookie
-        session["user"] = request.form.get("username").lower()
-        flash("Registration successful")
-        return redirect(url_for("profile.html", username=session["user"]))
-
-    return render_template("register.html")
-
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -69,9 +40,39 @@ def login():
         else:
             # username not found!
             flash("Username and/or Password don't match")
-            return redirect(url_for('login'))
+            return redirect(url_for('register'))
 
     return render_template("login.html")
+
+
+@app.route("/home")
+def home():
+    breads = list(mongo.db.breads.find().sort("name", 1))
+    return render_template("home.html", breads=breads)
+
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        # check if username already exists in database
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for('register'))
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Registration successful")
+        return redirect(url_for('profile', username=session["user"]))
+
+    return render_template("register.html")
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
@@ -79,9 +80,20 @@ def profile(username):
     # get session users' username from database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    if session["user"]:
-        return render_template("profile.html", username=username)
-
+    # match bread recipe in db with currently logged user and display
+    current_user = session["user"]
+    user_recipe = list(mongo.db.breads.find(
+        {"author": current_user.lower()}))
+    if user_recipe:
+        # if user is logged in, display profile page with users' recipes
+        if session["user"]:
+            return render_template(
+                "profile.html", username=username.capitalize(),
+                breads=user_recipe)
+        else:
+            flash("No Bread Recipes Listed Yet!")
+            return render_template(
+                "profile.html", username=username.capitalize())
     return redirect(url_for("login"))
 
 
@@ -110,7 +122,9 @@ def add_recipe():
             "method": request.form.get("method"),
             "cooking_temp": request.form.get("temperature"),
             "cooking_time": request.form.get("time"),
-            "image_url": request.form.get("url")
+            "image_url": request.form.get("url"),
+            "author": request.form.get("author").lower(),
+            "is_featured": request.form.get("is_featured")
         }
         mongo.db.breads.insert_one(bread)
         flash("New Bread Recipe Received - Thankyou!")
@@ -129,7 +143,9 @@ def edit_recipe(bread_id):
             "method": request.form.get("method"),
             "cooking_temp": request.form.get("temperature"),
             "cooking_time": request.form.get("time"),
-            "image_url": request.form.get("url")
+            "image_url": request.form.get("url"),
+            "author": request.form.get("author").lower(),
+            "is_featured": request.form.get("is_featured")
         }
         mongo.db.breads.update({"_id": ObjectId(bread_id)}, submit)
         flash("Recipe Updated - Thankyou!")

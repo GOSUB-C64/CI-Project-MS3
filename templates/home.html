@@ -7,7 +7,7 @@
                     <h1 class="medium_text white-text text-shadow deep-purple lighten-2">Featured Breads</h1>
                     <div class="row my_cards">
                         {% for bread in breads %}
-                            {% if loop.index <= 4 %}
+                            {% if loop.index<=4 %}
                                 <div class="card small my_small_card center-align">
                                     <a href="{{ url_for('display_recipe', bread_id=bread._id) }}">
                                         <div class="white-text text-shadow deep-purple lighten-2 name_db">{{- bread.name -}}</div>
@@ -18,7 +18,7 @@
                                         </div>
                                     </a>
                                 </div>
-                            {% endif %}
+                                {% endif %}
                         {% endfor %}
                     </div>
                 </div>
