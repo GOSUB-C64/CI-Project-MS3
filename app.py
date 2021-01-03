@@ -86,15 +86,13 @@ def profile(username):
         {"author": current_user.lower()}))
     if user_recipe:
         # if user is logged in, display profile page with users' recipes
-        if session["user"]:
-            return render_template(
-                "profile.html", username=username.capitalize(),
-                breads=user_recipe)
-        else:
-            flash("No Bread Recipes Listed Yet!")
-            return render_template(
-                "profile.html", username=username.capitalize())
-    return redirect(url_for("login"))
+        return render_template(
+            "profile.html", username=username.capitalize(),
+            breads=user_recipe)
+    else:
+        flash("No Bread Recipes Listed Yet!")
+        return render_template(
+            "profile.html", username=username.capitalize())
 
 
 @app.route("/display_breads")
