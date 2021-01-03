@@ -45,12 +45,6 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/home")
-def home():
-    breads = list(mongo.db.breads.find().sort("name", 1))
-    return render_template("home.html", breads=breads)
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -75,20 +69,26 @@ def register():
     return render_template("register.html")
 
 
+@app.route("/home")
+def home():
+    breads = list(mongo.db.breads.find().sort("name", 1))
+    return render_template("home.html", breads=breads)
+
+
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # get session users' username from database
+    # get session users' username from database for their profile page
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    # match bread recipe in db with currently logged user and display
+    # match bread recipe in db with currently logged user and display results
     current_user = session["user"]
-    user_recipe = list(mongo.db.breads.find(
-        {"author": current_user.lower()}))
+    user_recipe = mongo.db.breads.find(
+        {"author": current_user.lower()})
     if user_recipe:
         # if user is logged in, display profile page with users' recipes
         return render_template(
-            "profile.html", username=username.capitalize(),
-            breads=user_recipe)
+            "profile.html", breads=user_recipe,
+            username=username.capitalize())
     else:
         flash("No Bread Recipes Listed Yet!")
         return render_template(

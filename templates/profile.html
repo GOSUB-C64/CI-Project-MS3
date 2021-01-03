@@ -8,14 +8,19 @@
             <div class="col s12 m10 offset-m1">
                 <div class="row my_cards">
                     {% for bread in breads %}
-                    <div class="card small my_small_card center-align">
+                    <div class="card small my_small_card center-align del_edit">
                         <a href="{{ url_for('display_recipe', bread_id=bread._id) }}">
                             <div class="white-text text-shadow deep-purple lighten-2 name_db">{{- bread.name -}}</div>
                             <div class="description_db deep-purple-text left-align">{{- bread.description -}}</div>
                             <div class="image_db">
                                 <img src="{{ bread.image_url }}" alt="{{ bread.name }}">
+                                <!-- <img src="/static/images/baguettes.jpg"> -->
                             </div>
                         </a>
+                        <div id="del_edit_icons">
+                            <a href="" class="btn-small blue darken-2"><i class="fas fa-trash-alt"></i></a>
+                            <a href="" class="btn-small blue darken-2"><i class="fas fa-edit"></i></a>
+                        </div>
                     </div>
                     {% endfor %}
                 </div>

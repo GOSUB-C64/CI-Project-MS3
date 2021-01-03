@@ -56,6 +56,19 @@ main {
     box-sizing: border-box;
     font-family: "Redressed", Arial;
     font-size: 1.8em;
+    text-align: center;
+}
+.del_edit {
+    position: absolute;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+}
+
+.del_edit i {
+    bottom: 0;
+    justify-content: flex-end;
+    /* align-items: end; */
 }
 
 .large_ingredients_card {
