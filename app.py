@@ -112,8 +112,8 @@ def display_recipe(recipe_id):
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
+        
         author = session["user"]
-        mongo.db.breads.update_one({"$set": {"author": author}})
 
         bread = {
             "name": request.form.get("name"),
@@ -124,7 +124,7 @@ def add_recipe():
             "cooking_temp": request.form.get("temperature"),
             "cooking_time": request.form.get("time"),
             "image_url": request.form.get("url"),
-            "author": session["user"]
+            "author": author
         }
         mongo.db.breads.insert_one(bread)
         flash("New Bread Recipe Received - Thankyou!")
