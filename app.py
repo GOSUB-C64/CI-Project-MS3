@@ -144,7 +144,6 @@ def edit_recipe(recipe_id):
             "cooking_temp": request.form.get("temperature"),
             "cooking_time": request.form.get("time"),
             "image_url": request.form.get("url"),
-            "author": request.form.get("author").lower(),
             "is_featured": request.form.get("is_featured")
         }
         mongo.db.breads.update({"_id": ObjectId(recipe_id)}, submit)
