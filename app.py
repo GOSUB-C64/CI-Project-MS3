@@ -135,10 +135,11 @@ def add_recipe():
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
-
-        # author = session["user"]
-        # mongo.db.breads.update_one(
-        #     {"author": }, {"$push": {"username": session.user}})
+        """
+        copy session users' username over to
+            the author field in the breads collection.
+        """
+        author = session["user"]
 
         submit = {
             "name": request.form.get("name"),
@@ -149,11 +150,11 @@ def edit_recipe(recipe_id):
             "cooking_temp": request.form.get("temperature"),
             "cooking_time": request.form.get("time"),
             "image_url": request.form.get("url"),
-            "author": mongo.db.users.find_one(session["user"])
+            "author": author
         }
         mongo.db.breads.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Updated - Thankyou!")
-        # return redirect(url_for('display_breads'))
+        return redirect(url_for('display_breads'))
 
     bread = mongo.db.breads.find_one({"_id": ObjectId(recipe_id)})
     return render_template("edit_recipe.html", bread=bread)
