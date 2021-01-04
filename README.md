@@ -348,10 +348,11 @@ These are the technoloigies that were used to create this website. Click on any 
 
 # Responsiveness
 
-***The app is only responsive in medium screen sizes as I didnt have enough time to complete this phase.***
+*** The app is not fully responsive as I ran out of time ***
+*** some elements are not responsive ***
 
 
-
+** This app was not tested in any other browser other than Google Chrome in which it was designed ***
 
 <div><a href="#top">(TOP)</a></div>
 <div id="deploy"></div>
