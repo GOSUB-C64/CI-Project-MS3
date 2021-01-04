@@ -24,8 +24,7 @@
   + <a href="#auto"> Automated</a>
   + <a href="#man">Manual</a>
   + <a href="#res">Responsiveness</a>
-  + <a href="#resolved">Issues solved</a>
-  + <a href="#unsolved">Unsolved Issues</a>
+  + <a href="bugs">Bugs</a>
 + <a href="#deploy">Deployment</a>
 + <a href="#cred">Credits</a>
 
@@ -348,11 +347,55 @@ These are the technoloigies that were used to create this website. Click on any 
 
 # Responsiveness
 
-*** The app is not fully responsive as I ran out of time ***
-*** some elements are not responsive ***
+***The app is not fully responsive as I ran out of time***
+***some elements are not responsive***
 
 
-** This app was not tested in any other browser other than Google Chrome in which it was designed ***
+***This app was not tested in any other browser other than Google Chrome in which it was designed***
+
+
+# Bugs
+
++ Listed here are some of the bugs I encountered and how I got them fixed.
+
+Project Bugs as and when I find them and the processes involved in squashing said bug!
+
+## BUG #1
+
++ On the Materialize nav-bar I tried to make the links larger to be more readable but when I used a h1 tag (just to get the effect + to see if it was 'working'...) it pushed the new resized word downwards. It was kind of like I inserted padding or margin directly above the word as the resize took place but I did not.
+
++ I opened developer tools in chrome browser by right-clicking/2-finger-tap and selecting 'inspect'
+
++ I then selected the element selector and selected the problem link and there I found out that it did have margin at top and bottom applied. I then zeroed in on the element's css properties and removed the margin to check if it had any effect which it did - so I applied the settings in the css file and it worked as before.
+
+
+## BUG#2
+
++ As I added content I noticed that the footer I had in place was no longer behaving as a footer. (only in 2 out of the 5 pages) It wasn't moving down as content was added. It wasn't being dynamic. I needed to fix this as the cards from Materialize I used are getting longer with extra content and they aren't pushing the footer dynamically down as expected and hoped.
+Solution (after hours of digging around my own code and the Materialize docs) I finally realised that it was my own code that wasn't right. Specifically my HTML code was structured properly to house the footer.
+
+
+
+## BUG#3
++ Images in card on homepage not centering even after applying 'center-align; class ti img tag in html. So for this one I tried making my own class='image_db' and in the css I tried 'margin: 0 auto' and 'text-align: center;' but nothing worked. It was then than I did a google search and accessed an entry found on 
+Stack Overflow https://stackoverflow.com/questions/52098135/centering-an-image-within-a-bootstrap-card
+
++ Having 'text-align: center;' on the same line as the element you need aligned wont work unless its applied to the parent!
+So that's what I did and it worked!
++ It only works tho for images that are rectangles of a longer width than height. I did have problems with an image whose height was longer than its width but reverted to a different image for times sake.
+
+
+## BUG#4
++ Jinja statement {{ bread.image_url }} renders out properly in one html template but when called from another html template it doesnt work. Its taken up far too much of my precious time!! Its a 404 error message that I'm getting in the console in dev tools but Ive checked and rechecked the relative links and they appear ok, as in - the html files are in a folder called 'templates' and the images are in an outer folder (1 level back) so any relative reference to the images from the templates should work, right? Wrong!
+
++ The problem stemmed back to the way in which the url's for the images were inputted into MongoDb and that was by me!
+I had the url's entered as "static/images/image_url" whereas they should have been entered as "/static/images/image_url"
++ It was the missing  "/"  at the beginning of the relative url that was causing me all the grief. As soon as I corrected the proper path it worked seamlessly on both pages.(and any other additional pages - I suspect)
+
+
+
+
+
 
 <div><a href="#top">(TOP)</a></div>
 <div id="deploy"></div>
@@ -445,4 +488,15 @@ Outlined below are the steps needed to deploy a website to Heroku.
 <div><a href="#top">(TOP)</a></div>
 
 
+# Credits 
+
+Background image was sourced from [Pexels](https://www.pexels.com/photo/board-bread-breakfast-bunch-349610/)
+
+Sources of initial inspiration 
++ [Italian Breads](https://italicious.blog/20-breads-of-italy/)
++ [Wikipedia [1]](https://en.wikibooks.org/wiki/Cookbook:Focaccia) [[2]](https://en.wikibooks.org/wiki/Cookbook:Ciabatta) [[3]](https://en.wikibooks.org/wiki/Cookbook:Baguette) [[4]](https://en.wikibooks.org/wiki/Cookbook:Bagel)
+
+
+I owe a big thankyou to Igor Basuga(igor_ci) and Ed B (Ed Bradley) who really did pull out the stops to help me get past the finish line.
+Thankyou guys for your patience and perserverance! 
 
