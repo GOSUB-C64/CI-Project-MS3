@@ -78,12 +78,12 @@ def home():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # get session users' username from database for their profile page
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+    # username = mongo.db.users.find_one(
+    #     {"username": session["user"]})["username"]
     # match bread recipe in db with currently logged user and display results
     current_user = session["user"]
-    user_recipe = mongo.db.breads.find(
-        {"author": current_user.lower()})
+    user_recipe = list(mongo.db.breads.find(
+        {"author": current_user.lower()}))
     if user_recipe:
         # if user is logged in, display profile page with users' recipes
         return render_template(
@@ -103,15 +103,17 @@ def display_breads():
     return render_template("display_breads.html", breads=breads)
 
 
-@app.route("/display_recipe/<bread_id>")
-def display_recipe(bread_id):
-    bread = mongo.db.breads.find_one({"_id": ObjectId(bread_id)})
+@app.route("/display_recipe/<recipe_id>")
+def display_recipe(recipe_id):
+    bread = mongo.db.breads.find_one({"_id": ObjectId(recipe_id)})
     return render_template("display_recipe.html", bread=bread)
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
+        author = mongo.db.users.find_one({"username".lower()})
+
         bread = {
             "name": request.form.get("name"),
             "description": request.form.get("description"),
@@ -121,7 +123,7 @@ def add_recipe():
             "cooking_temp": request.form.get("temperature"),
             "cooking_time": request.form.get("time"),
             "image_url": request.form.get("url"),
-            "author": request.form.get("author").lower(),
+            "author": author,
             "is_featured": request.form.get("is_featured")
         }
         mongo.db.breads.insert_one(bread)
@@ -130,8 +132,8 @@ def add_recipe():
     return render_template("add_recipe.html")
 
 
-@app.route("/edit_recipe/<bread_id>", methods=["GET", "POST"])
-def edit_recipe(bread_id):
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
     if request.method == "POST":
         submit = {
             "name": request.form.get("name"),
@@ -145,12 +147,19 @@ def edit_recipe(bread_id):
             "author": request.form.get("author").lower(),
             "is_featured": request.form.get("is_featured")
         }
-        mongo.db.breads.update({"_id": ObjectId(bread_id)}, submit)
+        mongo.db.breads.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Updated - Thankyou!")
         # return redirect(url_for('display_breads'))
 
-    bread = mongo.db.breads.find_one({"_id": ObjectId(bread_id)})
+    bread = mongo.db.breads.find_one({"_id": ObjectId(recipe_id)})
     return render_template("edit_recipe.html", bread=bread)
+
+
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+    mongo.db.breads.remove({"_id": ObjectId(recipe_id)})
+    flash("Bread Recipe Successfully Deleted")
+    return redirect(url_for('home'))
 
 
 @app.route("/logout")

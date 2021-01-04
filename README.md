@@ -142,36 +142,59 @@ The final implementation based on the original wireframe design had to be augmen
 
 Unused (but: to be added at a later date)
 
-+ Registration
-+ Log in
-+ Log out
 + Searching ability
 
 
 Of the pages that have been implemented, changes from the original design (wireframes) are as follows...
 
-+ homepage shows one row of 4 cards instead of the initial 2 rows of 3 cards due to wanting to get more information displayed to the user about the recipe.
-+ display_breads.html - lists all breads in database. This page needed to have more breathing space for the content compared to what was originally thought as some 'methods/instructions' are quite long in the recipe.
-+ display_recipe.html - which details the ingredients and method on how to make the selected bread yourself accompanied by an image of the bread.
-+ add_recipe - final version remained close to concept with only a few extra fields needed for clarity -e.g. a cooking temperature.
-+ edit_recipe - here you can edit the bread recipe you've just clicked on to change any details you like. This page is quite similar to the edit_recipe page so most of the design was already done and reused.
++ **home.html**
+    + shows one row of 4 cards instead of the initial 2 rows of 3 cards due to wanting to get more information displayed to the user about the recipe.
++ **display_breads.html**
+     - lists all breads in database. This page needed to have more breathing space for the content compared to what was originally thought as some 'methods/instructions' are quite long in the recipe.
++ **display_recipe.html**
+     - which details the ingredients and method on how to make the selected bread yourself accompanied by an image of the bread.
++ **add_recipe.html** 
+    - final version remained close to concept with only a few extra fields needed for clarity -e.g. a cooking temperature.
++ **edit_recipe.html**
+     - here you can edit the bread recipe you've just clicked on to change any details you like. This page is quite similar to the edit_recipe page so most of the design was already done and reused.
++ **login.html** 
+    - A page used to Log the user in to the site - A session cookie is created here.
++ **logout.html**
+    - A page to safely log the user out. session cookie deleted
++ **profile.html**
+    - This page will ONLY list those recipes created by the user in session. The user also has the ability to edit or delete their own additions to the database.
 
+## *all html pages inherit from the base.html*
 
-All functionality of C.R.U.D. has been put in place.
+***All functionality of C.R.U.D. has been put in place***
 
 <div id="feats"></div>
+<div><a href="#top">(TOP)</a></div>
+
 
 # Features
 
 ## present features
 
-+ #1 Users can view all recipes in alphabetical order in an accordian style page control.
++ #1 Users can Register for a simple account.
 
-+ #2 Users can add their own bread recipes to the collection and then view them.
++ #2 Users can Login to their account profile.
 
-+ #3 Users can view the first 4 recipes stored in the collection that have a field of 'is_featured' set to true.
++ #3 Users can Logout of their profile.
 
-+ #4 The input for the 'country of origin' section has been controlled by a selector.
++ #4 Users can see their own content via their profile.
+
++ #5 Users can view all recipes in alphabetical order in an accordian style page control.
+
++ #6 Users can add their own bread recipes to the collection and then view them.
+
++ #7 Users can edit ONLY their own recipes via their profile page.
+
++ #8 Users can delete ONLY their own recipes via their profile page.
+
++ #9 Users can view the first 4 recipes stored in the collection that have a field of 'is_featured' set to true.
+
++ #10 The input for the 'country of origin' section has been controlled by a selector to avoid any typos.
 
 
 ## future features
@@ -182,9 +205,12 @@ All functionality of C.R.U.D. has been put in place.
 
 + #3 A login/logout and registration ability should be added to keep site secure.
 
++ #4 To have a bread recipe properly featured, users would use their 1 up-vote and the recipe with most votes at end of week would be featured on the homepage until it doesn't qualify.
 
 
 <div id="tech"></div>
+<div><a href="#top">(TOP)</a></div>
+
 
 # Technologies used
 
@@ -227,7 +253,9 @@ These are the technoloigies that were used to create this website. Click on any 
 + [Flask](https://www.tutorialspoint.com/python_web_development_libraries/python_web_development_libraries_flask_framework.htm)
     - ***Flask is a web application framework written in Python.  Flask is based on the Werkzeg WSGI toolkit and the Jinja2 template engine***
 
+<div><a href="#top">(TOP)</a></div>
 
+<div id="tests"></div>
 # Testing
 
 ## Automated
@@ -271,17 +299,19 @@ These are the technoloigies that were used to create this website. Click on any 
 ### user story 4
 + As a returning visitor I'd like to see my recently added information.
 
-    + **Comment** *"If you click on 'All Recipes' you can see your entry listed with some others alphabetically"*
+    + **Comment** *"You can see your added recipes in your profile page - just click on the **profile menu button** at top right. If you click on 'All Recipes' you can see your entry listed with some others alphabetically"*
 
 ### user story 5
 + As a contributing user, I'd like to have the ability to edit/update my recently added contribution.
 
-    + **Comment** *"Yes you can, just find your entry on the home page and click any content within the card and you'll be taken to the 'disply_recipe' page where you can see the recipe in its entirety and from here can click the 'edit' button at top right to edit your contribution"*
+    + **Comment** *"Yes you can, just find your entry on the home page and click any content within the card and you'll be taken to the 'disply_recipe' page where you can see the recipe in its entirety and from here can click the **edit** button at top right to edit your contribution.  You can edit your recipes from your profile page"*
 
 ### user story 6
 + As a contributing user, I'd like the power to delete my recently added information if I've changed my mind.
 
-    + **Comment** *" TBA "*
+    + **Comment** *" You can now delete your recipes as and when you want thru your profile page"*
+    
+    Users can ONLY edit/delete their own added content and not that of any other users'.
 
 ### user story 7
 + As a returning user - I'd like the ability to search through all the available information using certain search criteria; for example... search all records on the world encyclopedia website for information on 'forests' - it should list ALL forests.
@@ -291,29 +321,40 @@ These are the technoloigies that were used to create this website. Click on any 
 ### user story 8
 + As any user to the site - I must not be able to change/remove any other records on file that do not belong to me.
 
-    + **Comment** *"no user autentication implemented at the moment but will be at a later date"*
+    + **Comment** *"see user story 8"*
 
 ### user story 9
 + As a first time user - I should be able to register with the site and then log in.
 
-    + **Comment** *"no user autentication implemented"*
+    + **Comment** *"Registration is now possible when entering the site via the navbar menu"*
 
 ### user story 10
 + As a returning user I should have the ability to 'login' and/or 'logout' with confirmation on screen
 
-    + **Comment** *"no user autentication implemented"*
+    + **Comment** *"Logging in and out of the website is now actioned and having an account is also possible"*
 
 ### user story 11
 + As any user I should be able to easily navigate to what I want to do next.
 
-    + **Comment** *"The site is fairly intuitive with nav menu and the user easily not easily distracted due to the simplicity of the site"*
+    + **Comment** *"The site is fairly intuitive with nav menu and the user not easily distracted due to the simplicity of the site"*
 
 ### user story 12
 + As a contributing user after adding to the site there should be a thankyou message thanking the user for their contribution.
 
-    + **Comment** *"Yes a message pops up in the flash messages thanking the user for their contribution"*
+    + **Comment** *"Yes a message pops up in the flash messages (on screen) thanking the user for their contribution"*
+
+<div><a href="#top">(TOP)</a></div>
+<div id="deploy"></div>
+
+# Responsiveness
 
 
+
+
+
+
+<div><a href="#top">(TOP)</a></div>
+<div id="deploy"></div>
 # Deployment
 
 + GitHub Pages wont suffice for this project as it doesn't support the Python3 programming language, a non-relational database like SQL, or Jinja Templating.
@@ -361,6 +402,7 @@ Outlined below are the steps needed to deploy a website to Heroku.
         + You should see this setting up on screen.
         + When done you can click **Open App** if all went well you should be able to see your app with your new Heroku URL.
   
+<div><a href="#top">(TOP)</a></div>
 
 # How to download and run repository on Local Machine
 
@@ -376,14 +418,8 @@ Outlined below are the steps needed to deploy a website to Heroku.
 4. Next , open your preferred IDE with a previously created new Github repository and in the CLI navigate to the directory you'd like to clone to.
 5. Type ```git clone``` and paste in the copied link from the clipboard and execute that line.
 6. When the repo has been cloned you should see all the files associated with this workspace.
-7. Next you'll have to create the **env.py** file spoken of previously and add these settings..
-    + ```import os```
-    + ```os.environ.setdefault("IP", "0.0.0.0")```
-    + ```os.environ.setdefault("PORT", "5000")```
-    + ```os.environ.setdefault("SECRET_KEY", "your-secret-key-goes-here")```
-    + ```os.environ.setdefault("MONGO_URI", "mongodb+srv://root:your-password-goes-here@myfirstcluster.9yyun.mongodb.net/world_of_bread?retryWrites=true&w=majority")```
-    + ```os.environ.setdefault("MONGO_DBNAME", "name-of-your-database-goes-here")```
-8. After this has been entered and all is correct, you can push back to your own Github repo.
+7. Next you'll have to create an  **env.py** file spoken of previously and add it to your files in the root folder then add that to your git .ignore file.
+8. After this has been entered and all is correct, you can **git push** back to your own Github repo.
 
 
 ## Use a browser plugin or addon
@@ -404,6 +440,8 @@ Outlined below are the steps needed to deploy a website to Heroku.
     + go to https://addons.mozilla.org/en-GB/firefox/ on firefox browser
     + search for **gitpod** addon in the addon search box
     + follow on screen instructions to install.
+
+<div><a href="#top">(TOP)</a></div>
 
 
 
