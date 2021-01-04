@@ -348,7 +348,7 @@ These are the technoloigies that were used to create this website. Click on any 
 
 # Responsiveness
 
-
+***The app is only responsive in medium screen sizes as I didnt have enough time to complete this phase.***
 
 
 

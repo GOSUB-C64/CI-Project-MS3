@@ -16,9 +16,7 @@ main {
 
 .main-logo {
     font-family: "Redressed", Arial;
-    font-size: 4em;
-    padding-left: 100px;
-    margin: 0 auto;
+    font-size: 2em;
 }
 
 .home_page_image {
@@ -33,11 +31,14 @@ main {
 .my_cards {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
 }
 
 .ingredients_cards {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
+
 }
 
 .my_large_card_panel {
@@ -254,3 +255,34 @@ textarea {
     color: blue;
 }
 
+
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 768px){
+
+    .main-logo {
+        font-size: 4em;
+    }
+
+    .my_cards {
+        /* width: 80%; */
+    }
+
+    .card.small {
+        /* flex: 1 0 30%; */
+        width: 20%;
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width: 425px){
+
+    .my_cards {
+        flex-direction: column;
+        flex-basis: 100%;
+    }
+
+    .card.small {
+        width: 80%;
+    }
+}
