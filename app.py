@@ -112,7 +112,8 @@ def display_recipe(recipe_id):
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
-        author = mongo.db.users.find_one({"username".lower()})
+        author = session["user"]
+        mongo.db.breads.update_one({"$set": {"author": author}})
 
         bread = {
             "name": request.form.get("name"),
@@ -123,8 +124,7 @@ def add_recipe():
             "cooking_temp": request.form.get("temperature"),
             "cooking_time": request.form.get("time"),
             "image_url": request.form.get("url"),
-            "author": author,
-            "is_featured": request.form.get("is_featured")
+            "author": session["user"]
         }
         mongo.db.breads.insert_one(bread)
         flash("New Bread Recipe Received - Thankyou!")
@@ -135,6 +135,11 @@ def add_recipe():
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
+
+        # author = session["user"]
+        # mongo.db.breads.update_one(
+        #     {"author": }, {"$push": {"username": session.user}})
+
         submit = {
             "name": request.form.get("name"),
             "description": request.form.get("description"),
@@ -144,7 +149,7 @@ def edit_recipe(recipe_id):
             "cooking_temp": request.form.get("temperature"),
             "cooking_time": request.form.get("time"),
             "image_url": request.form.get("url"),
-            "is_featured": request.form.get("is_featured")
+            "author": mongo.db.users.find_one(session["user"])
         }
         mongo.db.breads.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Updated - Thankyou!")
