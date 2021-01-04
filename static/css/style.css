@@ -38,7 +38,6 @@ main {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-
 }
 
 .my_large_card_panel {
@@ -137,6 +136,11 @@ section .row {
     font-size: 2em;
 }
 
+.profile_text {
+    font-family: "Redressed", Arial;
+    font-size: 2em;
+}
+
 .links a {
     font-family: "Redressed", Arial;
     font-size: 1.5em;
@@ -204,8 +208,9 @@ textarea {
     margin-bottom: 0;
 }
 
-.collapsible .row h4 {
+.collapsible .row p {
     font-family: "Raleway", Arial;
+    font-size: 1.5em;
 }
 
 .collapsible-body {
@@ -269,7 +274,7 @@ textarea {
     }
 
     .card.small {
-        /* flex: 1 0 30%; */
+        flex: 1 0 30%;
         width: 20%;
         font-size: 1em;
     }
@@ -284,5 +289,33 @@ textarea {
 
     .card.small {
         width: 80%;
+    }
+
+    .medium_text {
+        font-family: "Redressed", Arial;
+        font-size: 1em;
+    }
+
+    .small_text {
+        font-family: "Raleway", Arial;
+        font-size: 1em;
+        margin-left: 1em;
+    }
+
+    .collapsible .row p {
+        font-family: "Raleway", Arial;
+        font-size: 1em;
+    }
+
+    .ingredients_cards {
+        display: flex;
+        flex-direction: coloumn;
+    }
+    .row .col.s6 {
+        width: 100%;
+    }
+
+    .page-footer {
+        text-align: center;    
     }
 }
